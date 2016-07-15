@@ -1,4 +1,3 @@
-module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -49,9 +48,10 @@ module.exports =
 	 * Created by ryan on 16/7/14.
 	 */
 
-	var $ = __webpack_require__(1),
-	    _ = __webpack_require__(2),
-	    backbone   = __webpack_require__(3);
+	window.$ = __webpack_require__(1);
+	window._ = __webpack_require__(2);
+
+	window.Backbone = __webpack_require__(3);
 
 /***/ },
 /* 1 */

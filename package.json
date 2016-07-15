@@ -8,6 +8,7 @@
   },
   "author": "sun yi",
   "license": "ISC",
+  "git": "https://github.com/RyanSuen/backbone.spa.git",
   "dependencies": {
     "backbone": "^1.3.3",
     "underscore": "^1.8.3",

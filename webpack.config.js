@@ -10,7 +10,7 @@ var config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js',
-        libraryTarget: 'commonjs2'
+        libraryTarget: 'var'
     }
 };
 
