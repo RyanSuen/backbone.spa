@@ -53,7 +53,7 @@
 	    Backbone = __webpack_require__(3);
 
 	var App = {
-	    Router: __webpack_require__(9)
+	    Router: __webpack_require__(4)
 	};
 
 	$(function() {
@@ -83,44 +83,7 @@
 	module.exports = Backbone;
 
 /***/ },
-/* 4 */,
-/* 5 */
-/***/ function(module, exports) {
-
-	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module1</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	/**
-	 * Created by sun yi on 2016/7/15.
-	 */
-
-	var module1 = (function() {
-
-	    var Module1 = function() {},
-	        fn = Module1.prototype;
-
-	    fn.onLoad = function() {
-	        console.log( 'module1' );
-	    };
-
-	    return new Module1();
-
-	})();
-
-	module.exports =  module1;
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module2</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
-
-/***/ },
-/* 8 */,
-/* 9 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -132,50 +95,62 @@
 	};
 
 	module.exports = Backbone.Router.extend({    //创建路由
+
 	    routes: {
-	        "": "index",
-	        "teams": "getTeams",
-	        "teams/:country": "getTeamsCountry",
-	        "teams/:country/:name": "getTeam",
-	        "error": "fourOfOur"
+	        "": "indexAction",
+	        "teams": "getTeamsAction",
+	        "teams/:country": "getTeamsCountryAction",
+	        "teams/:country/:name": "getTeamAction",
+	        "error": "fourOfOurAction"
 	    },
-	    index: function() {
+
+	    indexAction: function() {
 
 	        //html,css
 	        var module1Page =  __webpack_require__(5),
-	            module1Css = __webpack_require__(11),
+	            module1Css = __webpack_require__(6),
 	            merge = mergeHtmlAndCss(module1Css, module1Page);
 	        $('body').html( merge );
 
 	        //js
-	        var module1 = __webpack_require__(6);
+	        var module1 = __webpack_require__(9);
 	        module1.onLoad();
 
 	    },
-	    getTeams: function() {
-	        var module2 = __webpack_require__(7);
+
+	    getTeamsAction: function() {
+	        var module2 = __webpack_require__(10);
 	        $('body').html( module2 );
 	    },
-	    getTeamsCountry: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
+
+	    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
 	        console.log('i will get all countries!');
 	    },
-	    getTeam: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
+
+	    getTeamAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
 	        console.log('get team!');
 	    },
-	    fourOfOur: function() {    console.log( 'error' );
+
+	    fourOfOurAction: function() {    console.log( 'error' );
 	        //404 page
 	    }
+
 	});
 
 /***/ },
-/* 10 */,
-/* 11 */
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module1</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// css-to-string-loader: transforms styles from css-loader to a string output
 
 	// Get the styles
-	var styles = __webpack_require__(12);
+	var styles = __webpack_require__(7);
 
 	if (typeof styles === 'string') {
 	  // Return an existing string
@@ -186,10 +161,10 @@
 	}
 
 /***/ },
-/* 12 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(8)();
 	// imports
 
 
@@ -200,7 +175,7 @@
 
 
 /***/ },
-/* 13 */
+/* 8 */
 /***/ function(module, exports) {
 
 	/*
@@ -254,6 +229,35 @@
 		return list;
 	};
 
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	/**
+	 * Created by sun yi on 2016/7/15.
+	 */
+
+	var module1 = (function() {
+
+	    var Module1 = function() {},
+	        fn = Module1.prototype;
+
+	    fn.onLoad = function() {
+	        console.log( 'module1' );
+	    };
+
+	    return new Module1();
+
+	})();
+
+	module.exports =  module1;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module2</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
 
 /***/ }
 /******/ ]);

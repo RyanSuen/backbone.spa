@@ -7,17 +7,19 @@ var mergeHtmlAndCss = function( css, html) {
 };
 
 module.exports = Backbone.Router.extend({    //创建路由
+
     routes: {
-        "": "index",
-        "teams": "getTeams",
-        "teams/:country": "getTeamsCountry",
-        "teams/:country/:name": "getTeam",
-        "error": "fourOfOur"
+        "": "indexAction",
+        "teams": "getTeamsAction",
+        "teams/:country": "getTeamsCountryAction",
+        "teams/:country/:name": "getTeamAction",
+        "error": "fourOfOurAction"
     },
-    index: function() {
+
+    indexAction: function() {
 
         //html,css
-        var module1Page =  require('html!../views/part1/module1.html'),
+        var module1Page =  require('../views/part1/module1.html'),
             module1Css = require('../less/index/module1.less'),
             merge = mergeHtmlAndCss(module1Css, module1Page);
         $('body').html( merge );
@@ -27,17 +29,22 @@ module.exports = Backbone.Router.extend({    //创建路由
         module1.onLoad();
 
     },
-    getTeams: function() {
-        var module2 = require('html!../views/part1/module2.html');
+
+    getTeamsAction: function() {
+        var module2 = require('../views/part1/module2.html');
         $('body').html( module2 );
     },
-    getTeamsCountry: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
+
+    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
         console.log('i will get all countries!');
     },
-    getTeam: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
+
+    getTeamAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
         console.log('get team!');
     },
-    fourOfOur: function() {    console.log( 'error' );
+
+    fourOfOurAction: function() {    console.log( 'error' );
         //404 page
     }
+
 });

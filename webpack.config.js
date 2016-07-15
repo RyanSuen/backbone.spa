@@ -20,6 +20,10 @@ var config = {
     module: {
         loaders: [
             {
+                test: /\.html$/,
+                loader: 'html'
+            },
+            {
                 test: /\.less$/,
                 loader: 'css-to-string-loader!css-loader!less-loader'
             }
