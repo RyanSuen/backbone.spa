@@ -3,6 +3,7 @@
  */
 
 var webpack = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
     path    = require('path');
 
 var config = {
@@ -11,8 +12,8 @@ var config = {
         vender: ['zepto', 'underscore', 'backbone']*/
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, ''),
+        filename: '[name].[hash].bundle.js',
         /*libraryTarget: 'var',
         publicPath: '/',
         chunkFilename: '[name].bundle.js'*/
@@ -44,6 +45,12 @@ var config = {
         /*new webpack.optimize.CommonsChunkPlugin({
             names: ['vender', 'manifest']
         })*/
+        new HtmlWebpackPlugin({
+            title: 'ryan test',
+            inject: 'body',
+            filename: 'index.html',
+            template: path.resolve(__dirname, 'build/template.html')
+        })
     ]
 };
 

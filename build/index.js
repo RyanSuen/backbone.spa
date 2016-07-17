@@ -10,7 +10,7 @@ var App = {
     Router: require('./router/appRouter.js')
 };
 
-$(function() {
+$(function() {    console.log('start');
 
     //路由
     var mainRouter = new App.Router();    //实例化路由
