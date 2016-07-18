@@ -4,7 +4,8 @@
 
 var webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    path    = require('path');
+    path    = require('path'),
+    env = 'dev';    //    dev(开发) / pro(生产)
 
 var config = {
     entry: {
@@ -12,9 +13,9 @@ var config = {
         vender: ['zepto', 'underscore', 'backbone']*/
     },
     output: {
-        path: path.resolve(__dirname, ''),
-        filename: '[name].[hash].bundle.js',
-        /*libraryTarget: 'var',
+        path: path.resolve(process.cwd(), ''),
+        filename: env === 'pro' ? '[name].[hash].bundle.js' : '[name].bundle.js'/*,
+        libraryTarget: 'var',
         publicPath: '/',
         chunkFilename: '[name].bundle.js'*/
     },
@@ -29,6 +30,9 @@ var config = {
                 loader: 'css-to-string-loader!css-loader!less-loader'
             }
         ]
+    },
+    resolve: {
+      extensions: ['', '.js', '.less']
     },
     externals: [
         {
@@ -53,5 +57,24 @@ var config = {
         })
     ]
 };
+
+var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+        warnings: false
+    }
+});
+
+var DefinePlugin =  new webpack.DefinePlugin({
+    'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+    }
+});
+
+if( 'dev' === env ) {
+    config['devtool'] = 'source-map';
+} else if( 'pro' === env ) {
+    config.plugins.push( UglifyJsPlugin );
+    config.push( DefinePlugin );
+}
 
 module.exports = config;

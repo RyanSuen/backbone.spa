@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -47,21 +47,21 @@
 	/**
 	 * Created by ryan on 16/7/14.
 	 */
-
+	
 	var $ = __webpack_require__(1),
 	    _ = __webpack_require__(2),
 	    Backbone = __webpack_require__(3);
-
+	
 	var App = {
 	    Router: __webpack_require__(4)
 	};
-
+	
 	$(function() {    console.log('start');
-
+	
 	    //路由
 	    var mainRouter = new App.Router();    //实例化路由
 	    Backbone.history.start(/*{pushState: true}*/);    //启用路由
-
+	
 	});
 
 /***/ },
@@ -89,13 +89,13 @@
 	/**
 	 * Created by sun yi on 2016/7/15.
 	 */
-
+	
 	var mergeHtmlAndCss = function( css, html) {
 	    return '<style>' + css + '</style>' + html;
 	};
-
+	
 	module.exports = Backbone.Router.extend({    //创建路由
-
+	
 	    routes: {
 	        "": "indexAction",
 	        "teams": "getTeamsAction",
@@ -103,38 +103,38 @@
 	        "teams/:country/:name": "getTeamAction",
 	        "error": "fourOfOurAction"
 	    },
-
+	
 	    indexAction: function() {
-
+	
 	        //html,css
 	        var module1Page =  __webpack_require__(5),
 	            module1Css = __webpack_require__(6),
 	            merge = mergeHtmlAndCss(module1Css, module1Page);
 	        $('body').html( merge );
-
+	
 	        //js
 	        var module1 = __webpack_require__(9);
 	        module1.onLoad();
-
+	
 	    },
-
+	
 	    getTeamsAction: function() {
 	        var module2 = __webpack_require__(10);
 	        $('body').html( module2 );
 	    },
-
+	
 	    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
 	        console.log('i will get all countries!');
 	    },
-
+	
 	    getTeamAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
 	        console.log('get team!');
 	    },
-
+	
 	    fourOfOurAction: function() {    console.log( 'error' );
 	        //404 page
 	    }
-
+	
 	});
 
 /***/ },
@@ -148,10 +148,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	// css-to-string-loader: transforms styles from css-loader to a string output
-
+	
 	// Get the styles
 	var styles = __webpack_require__(7);
-
+	
 	if (typeof styles === 'string') {
 	  // Return an existing string
 	  module.exports = styles;
@@ -166,11 +166,11 @@
 
 	exports = module.exports = __webpack_require__(8)();
 	// imports
-
-
+	
+	
 	// module
 	exports.push([module.id, "body {\n  background: green;\n}\n", ""]);
-
+	
 	// exports
 
 
@@ -185,7 +185,7 @@
 	// css base code, injected by the css-loader
 	module.exports = function() {
 		var list = [];
-
+	
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
@@ -199,7 +199,7 @@
 			}
 			return result.join("");
 		};
-
+	
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -237,20 +237,20 @@
 	/**
 	 * Created by sun yi on 2016/7/15.
 	 */
-
+	
 	var module1 = (function() {
-
+	
 	    var Module1 = function() {},
 	        fn = Module1.prototype;
-
+	
 	    fn.onLoad = function() {
 	        console.log( 'module1' );
 	    };
-
+	
 	    return new Module1();
-
+	
 	})();
-
+	
 	module.exports =  module1;
 
 /***/ },
@@ -261,3 +261,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=index.bundle.js.map
