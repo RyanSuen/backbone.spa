@@ -22,7 +22,7 @@ module.exports = Backbone.Router.extend({    //创建路由
         var module1Page =  require('../views/part1/module1.html'),
             module1Css = require('../less/index/module1.less'),
             merge = mergeHtmlAndCss(module1Css, module1Page);
-        $('body').html( merge );
+        $('body').addClass('animated fadeIn').html( merge );
 
         //js
         var module1 = require('../js/index/module1.js');
@@ -32,7 +32,7 @@ module.exports = Backbone.Router.extend({    //创建路由
 
     getTeamsAction: function() {
         var module2 = require('../views/part1/module2.html');
-        $('body').html( module2 );
+        $('body').addClass('animated fadeIn').html( module2 );
     },
 
     getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);

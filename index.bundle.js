@@ -110,7 +110,7 @@
 	        var module1Page =  __webpack_require__(5),
 	            module1Css = __webpack_require__(6),
 	            merge = mergeHtmlAndCss(module1Css, module1Page);
-	        $('body').html( merge );
+	        $('body').addClass('animated fadeIn').html( merge );
 	
 	        //js
 	        var module1 = __webpack_require__(9);
@@ -120,7 +120,7 @@
 	
 	    getTeamsAction: function() {
 	        var module2 = __webpack_require__(10);
-	        $('body').html( module2 );
+	        $('body').addClass('animated fadeIn').html( module2 );
 	    },
 	
 	    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
