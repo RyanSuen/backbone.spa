@@ -31,6 +31,7 @@ module.exports = Backbone.Router.extend({    //创建路由
     },
 
     getTeamsAction: function() {
+        console.log('dsff');
         var module2 = require('../views/part1/module2.html');
         $('body').addClass('animated fadeIn').html( module2 );
     },
