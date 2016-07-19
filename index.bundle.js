@@ -56,7 +56,7 @@
 	    Router: __webpack_require__(4)
 	};
 	
-	$(function() {    console.log('start');
+	$(function() {
 	
 	    //路由
 	    var mainRouter = new App.Router();    //实例化路由
@@ -107,20 +107,19 @@
 	    indexAction: function() {
 	
 	        //html,css
-	        var module1Page =  __webpack_require__(5),
-	            module1Css = __webpack_require__(6),
-	            merge = mergeHtmlAndCss(module1Css, module1Page);
-	        $('body').addClass('animated fadeIn').html( merge );
+	        var mainPage =  __webpack_require__(5),
+	            mainCss = __webpack_require__(6),
+	            merge = mergeHtmlAndCss(mainCss, mainPage);
+	        $('body').html( merge ).addClass('animated fadeIn');
 	
 	        //js
-	        var module1 = __webpack_require__(9);
-	        module1.onLoad();
-	
+	        var main = __webpack_require__(9);
+	        main.onLoad();
 	    },
 	
 	    getTeamsAction: function() {
 	        var module2 = __webpack_require__(10);
-	        $('body').addClass('animated fadeIn').html( module2 );
+	        $('body').html( module2 ).addClass('animated fadeIn');
 	    },
 	
 	    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
@@ -141,7 +140,7 @@
 /* 5 */
 /***/ function(module, exports) {
 
-	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module1</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
+	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module1</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>\r\n\r\n<span class=\"get-picture\">\r\n    <input id=\"fileinput\" type=\"file\" />\r\n</span>\r\n\r\n<a id=\"link\" href=\"javascript:void 0;\">wo yao tiao lo </a>\r\n\r\n<video id=\"video\"></video>\r\n<canvas id=\"canvas\"></canvas>";
 
 /***/ },
 /* 6 */
@@ -169,7 +168,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background: green;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background: grey;\n}\n.get-picture {\n  display: block;\n  width: 4rem;\n  height: 4rem;\n  background: #000;\n  font-size: 1rem;\n  /*opacity: 0;*/\n  /*visibility: hidden;*/\n}\n.get-picture input {\n  height: 100%;\n  width: 100%;\n  display: block;\n  font-size: 1rem;\n}\n.place-img {\n  width: 6rem;\n  height: 6rem;\n}\n", ""]);
 	
 	// exports
 
@@ -238,20 +237,39 @@
 	 * Created by sun yi on 2016/7/15.
 	 */
 	
-	var module1 = (function() {
+	var main = (function() {
 	
-	    var Module1 = function() {},
-	        fn = Module1.prototype;
+	    var main = function() {},
+	        fn = main.prototype;
 	
-	    fn.onLoad = function() {
-	        console.log( 'module1' );
+	    fn.handleClick = function(){
+	        $('#link').on('click',function(){
+	            location.href = "/backbone.spa/#teams";
+	        });
+	        /*$("#fileinput").change(function(e){
+	            console.log(e.target,e.dataTransfer);
+	            var file = e.target.files||e.dataTransfer.files;
+	            if(file){
+	                var reader = new FileReader();
+	                reader.onload=function(){
+	                    $("<img src='"+this.result+"'/>").appendTo("body");
+	
+	                };
+	                console.log(reader);
+	                reader.readAsDataURL(file);
+	            }
+	        });*/
 	    };
 	
-	    return new Module1();
+	    fn.onLoad = function() {
+	        this.handleClick();
+	    };
+	
+	    return new main();
 	
 	})();
 	
-	module.exports =  module1;
+	module.exports =  main;
 
 /***/ },
 /* 10 */
