@@ -28,11 +28,15 @@ var config = {
             {
                 test: /\.less$/,
                 loader: 'css-to-string-loader!css-loader!less-loader'
+            },
+            {
+                test: /(.png)|(.jpg)|(.jpeg)|(.gif)$/,
+                loader: 'url-loader'
             }
         ]
     },
     resolve: {
-      extensions: ['', '.js', '.less']
+      extensions: ['', '.js', '.less', '.jpg', '.jpeg', '.png', '.gif']
     },
     externals: [
         {
