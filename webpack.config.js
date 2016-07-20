@@ -39,7 +39,7 @@ var config = {
             "zepto": "$"
         },
         {
-        "underscore": "_"
+            "underscore": "_"
         },
         {
             "backbone": "Backbone"
@@ -55,7 +55,8 @@ var config = {
             filename: 'index.html',
             template: path.resolve(__dirname, 'build/template.html')
         })
-    ]
+    ],
+    watch:true
 };
 
 var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
