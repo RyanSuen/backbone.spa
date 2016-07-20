@@ -152,7 +152,7 @@
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div class=\"init\">\r\n    <div class=\"header\">\r\n        <div class=\"banner\">\r\n            <img src=\"/images/init_banner.png\" />\r\n        </div>\r\n        <div class=\"open\">\r\n            <i><img src=\"/images/init_iconopen.png\" /></i>\r\n            <span>已开启妈妈</span>\r\n        </div>\r\n        <div class=\"bottom\">\r\n            <img src=\"/images/init_top.png\" />\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div class=\"init\">\r\n<<<<<<< HEAD\r\n    <div class=\"header\">\r\n        <div class=\"banner\">\r\n            <img src=\"/images/init_banner.png\" />\r\n        </div>\r\n        <div class=\"open\">\r\n            <i><img src=\"/images/init_iconopen.png\" /></i>\r\n            <span>已开启妈妈状态</span>\r\n        </div>\r\n        <div class=\"bottom\">\r\n            <img src=\"/images/init_top.png\" />\r\n        </div>\r\n    </div>\r\n    <script id=\"init-tmpl\" type=\"x-tmpl-mustache\">\r\n        <div class=\"header\">\r\n            <div class=\"banner\">\r\n                <img src=\"/backbone.spa/images/init_banner.png\" />\r\n            </div>\r\n            <div class=\"open\">\r\n                <i><img src=\"/backbone.spa/images/init_iconopen.png\" /></i>\r\n                <span>�ѿ�������״̬</span>\r\n            </div>\r\n            <div class=\"bottom\">\r\n                <img src=\"/backbone.spa/images/init_top.png\" />\r\n            </div>\r\n        </div>\r\n    </script>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 9 */

@@ -21,6 +21,7 @@
     "less-loader": "^2.2.3",
     "mustache": "^2.2.1",
     "underscore": "^1.8.3",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "zepto": "^1.2.0"
   }
