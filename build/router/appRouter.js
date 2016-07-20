@@ -19,21 +19,28 @@ module.exports = Backbone.Router.extend({    //创建路由
     indexAction: function() {
 
         //html,css
-        var module1Page =  require('../views/part1/module1.html'),
-            module1Css = require('../less/index/module1.less'),
-            merge = mergeHtmlAndCss(module1Css, module1Page);
-        $('body').addClass('animated fadeIn').html( merge );
+        var initPage =  require('../views/part1/init.html'),
+            initCss = require('../less/part1/init.less'),
+            merge = mergeHtmlAndCss(initCss, initPage);
+        $('body').html( merge ).addClass('animated fadeIn');
 
         //js
-        var module1 = require('../js/index/module1.js');
-        module1.onLoad();
+        /*var init = require('../js/part1/init.js');
+        init.onLoad();*/
+        /*//html,css
+        var mainPage =  require('../views/part1/main.html'),
+            mainCss = require('../less/part1/main.less'),
+            merge = mergeHtmlAndCss(mainCss, mainPage);
+        $('body').html( merge ).addClass('animated fadeIn');
 
+        //js
+        var main = require('../js/part1/main.js');
+        main.onLoad();*/
     },
 
     getTeamsAction: function() {
-        console.log('dsff');
         var module2 = require('../views/part1/module2.html');
-        $('body').addClass('animated fadeIn').html( module2 );
+        $('body').html( module2 ).addClass('animated fadeIn');
     },
 
     getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);

@@ -1,0 +1,38 @@
+/* LESS Document */
+
+/*圆角*/
+.br(@r){
+			border-radius:@r;
+	     -o-border-radius:@r;
+		-ms-border-radius:@r;
+	   -moz-border-radius:@r;
+	-webkit-border-radius:@r;
+}
+
+.bs(@r){
+			box-shadow:@r;
+	     -o-box-shadow:@r;
+		-ms-box-shadow:@r;
+	   -moz-box-shadow:@r;
+	-webkit-box-shadow:@r;
+}
+
+
+
+.clear(){
+	clear:both;
+	&:after {
+	  display: block;
+	  clear: both;
+	  visibility: hidden;
+	  height: 0;
+	  overflow: hidden;
+	  content: ".";
+	}
+}
+
+
+/**/
+.w100(){
+	width:100%;
+}
