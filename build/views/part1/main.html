@@ -1,29 +1,137 @@
 <!--Created by sun yi on 2016/7/15.-->
 <div class="main">
+    <div id="main"></div>
+    <script id="title-tpl" type="x-tmpl-mustache">
+
+    </script>
+
     <section class="info">
-        <div id="main-title"></div>
-        <script id="title-tpl" type="x-tmpl-mustache">
-            <header class="main-title clear">
-                <div class="left">
-                    <span>今天</span>
-                </div>
-                <div class="right">
-                    <img src="{{IMG_PATH}}main_icon_msg.png{{RANDOM}}" />
-                </div>
-                <div class="date">
-                    <i class="pre"></i>
-                    <span>12月12日</span>
-                    <i class="next"></i>
-                </div>
-            </header>
-        </script>
+        <header class="main-title clear">
+            <div class="left">
+                <span>今天</span>
+            </div>
+            <div class="right">
+                <img src="{{IMG_PATH}}main_icon_msg.png{{RANDOM}}" />
+            </div>
+            <div class="date">
+                <i class="pre"></i>
+                <span>12月12日</span>
+                <i class="next"></i>
+            </div>
+        </header>
         <div class="how-old">
             <p>一个月6天</p>
         </div>
-        <div class="base-info clear">
+        <!--<div class="base-info clear">
             <div class="left">
 
             </div>
+        </div>-->
+        <div class="desc">
+            <p>我出生了！如果是男宝宝，高48.0-51.8厘米、重2.9-3.9千克；如果是女宝宝，高47.3-51.0厘米、重2.8-3.7千克。</p>
         </div>
+    </section>
+    <section class="today-msg">
+        <h4 class="today-title">
+            <span>今日提醒</span>
+            <i>
+                <img src="/backbone.spa/images/main_index.png" />
+            </i>
+        </h4>
+        <div class="today-list clear">
+            <div class="left">
+                <img src="/backbone.spa/images/main_todaycontent.png" />
+            </div>
+            <div class="auto">
+                <h5>宝宝身高体重记录</h5>
+                <p>记录宝宝第一周身高体重变化</p>
+            </div>
+        </div>
+        <div class="line"></div>
+    </section>
+
+    <section class="baby-know">
+        <header class="clear">
+            <div class="left">
+                宝宝知道
+            </div>
+            <div class="right">
+                更多
+            </div>
+        </header>
+        <ul>
+            <li>
+                <div class="list-title clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_title_01.png" />
+                    </div>
+                    <div class="auto">
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="list-content clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_content_01.png" />
+                    </div>
+                    <div class="auto">
+                        <p></p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list-title clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_title_02.png" />
+                    </div>
+                    <div class="auto">
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="list-content clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_content_02.png" />
+                    </div>
+                    <div class="auto">
+                        <p></p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list-title clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_title_03.png" />
+                    </div>
+                    <div class="auto">
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="list-content clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_content_03.png" />
+                    </div>
+                    <div class="auto">
+                        <p></p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list-title clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_title_04.png" />
+                    </div>
+                    <div class="auto">
+                        <h4></h4>
+                    </div>
+                </div>
+                <div class="list-content clear">
+                    <div class="left">
+                        <img src="/backbone.spa/images/main_content_04.png" />
+                    </div>
+                    <div class="auto">
+                        <p></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </section>
 </div>
