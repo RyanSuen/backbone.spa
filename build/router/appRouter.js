@@ -10,6 +10,8 @@ module.exports = Backbone.Router.extend({    //创建路由
 
     routes: {
         "": "indexAction",
+        "inits": "initAction",
+        "inits/:gender": "initGenderAction",
         "teams": "getTeamsAction",
         "teams/:country": "getTeamsCountryAction",
         "teams/:country/:name": "getTeamAction",
@@ -17,17 +19,7 @@ module.exports = Backbone.Router.extend({    //创建路由
     },
 
     indexAction: function() {
-
         //html,css
-        var initPage =  require('../views/part1/init.html'),
-            initCss = require('../less/part1/init.less'),
-            merge = mergeHtmlAndCss(initCss, initPage);
-        $('body').html( merge ).addClass('animated fadeIn');
-
-        //js
-        /*var init = require('../js/part1/init.js');
-        init.onLoad();*/
-        /*//html,css
         var mainPage =  require('../views/part1/main.html'),
             mainCss = require('../less/part1/main.less'),
             merge = mergeHtmlAndCss(mainCss, mainPage);
@@ -35,7 +27,24 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         //js
         var main = require('../js/part1/main.js');
-        main.onLoad();*/
+        main.onLoad();
+    },
+
+    initAction: function () {
+        var initPage =  require('../views/init/init.html'),
+            initCss = require('../less/init/init.less'),
+            merge = mergeHtmlAndCss(initCss, initPage);
+        $('body').html( merge ).addClass('animated fadeIn');
+    },
+
+
+    initGenderAction: function () {
+        var genderPage =  require('../views/init/gender.html'),
+            genderCss = require('../less/init/gender.less'),
+            merge = mergeHtmlAndCss(genderCss, genderPage);
+        $('body').html( merge ).addClass('animated fadeIn');
+        var gender = require('../js/init/gender.js');
+        gender.onLoad();
     },
 
     getTeamsAction: function() {

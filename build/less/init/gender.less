@@ -1,0 +1,85 @@
+@import "../common/reset";
+@import "../common/public";
+@import "../common/css3function";
+@import "../common/config";
+.gender{
+  .title{
+    padding-top: 4.125rem;
+    h4{
+      text-align: center;
+      color: #24d7cc;
+      font-size: 1.0625rem;
+      font-weight: 500;
+    }
+  }
+  ul{
+    width: 5.625rem;
+    margin: 0 auto;
+    padding-top: 1.125rem;
+    li{
+      margin-top: 1.8125rem;
+      i{
+        display: block;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
+      span{
+        width: 100%;
+        display: block;
+        margin: .5rem auto 0  auto;
+        font-size: 1rem ;
+        text-align: center;
+      }
+      &.boy{
+        i{
+          height: 5.625rem;
+          background-image: url('@{IMAGE-PATH}gender_boy.png');
+        }
+        span{
+          color: #5b7c9b;
+        }
+        &.active{
+          i{
+            background-image: url('@{IMAGE-PATH}gender_boy_active.png');
+          }
+        }
+      }
+      &.girl{
+        i{
+          height: 6.1875rem;
+          background-image: url('@{IMAGE-PATH}gender_girl.png');
+        }
+        span{
+          color: #ff6382;
+        }
+        &.active{
+          i{
+            background-image: url('@{IMAGE-PATH}gender_girl_active.png');
+          }
+        }
+      }
+    }
+  }
+  .btn{
+    width:15.9375rem;
+    height: 2rem;
+    margin: 4rem auto 2.75rem auto;
+    span{
+      display: inline-block;
+      width: 6.9375rem;
+      height: 100%;
+      line-height: 2rem;
+      text-align: center;
+      border: .0625rem solid #24d7cc;
+      color: #24d7cc;
+      font-size: .9375rem;
+      .br(2rem);
+      &.active{
+        background-color: #24d7cc;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
