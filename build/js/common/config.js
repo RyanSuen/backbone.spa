@@ -14,5 +14,5 @@ module.exports = {
     API_URL: {
 
     },
-    RANDOM: '?random=' +Math.random().toString().replace('.', '')
+    DATE: '?date=2016072101'// +Math.random().toString().replace('.', '')
 };
