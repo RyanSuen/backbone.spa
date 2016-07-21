@@ -2,12 +2,15 @@
  * Created by sun yi on 2016/7/20.
  */
 
-var main = (function() {
+var config = require('../common/config');
 
-    var main = function() {},
-        fn = main.prototype;
+var init = (function() {
+
+    var Init = function() {},
+        fn = Init.prototype;
 
     fn.handleClick = function(){
+
         $('#link').on('click',function(){
             location.href = "/backbone.spa/#teams";
         });
@@ -16,6 +19,7 @@ var main = (function() {
             pageData: {},
             IMG_URL: ''
         });
+
         /*$("#fileinput").change(function(e){
          console.log(e.target,e.dataTransfer);
          var file = e.target.files||e.dataTransfer.files;
@@ -31,12 +35,37 @@ var main = (function() {
          });*/
     };
 
-    fn.onLoad = function() {
-        this.handleClick();
+    fn.zeptoTest = function() {
+
+        $.fn.ryan = function() {
+            console.log( 'ryan' );
+        };
+
+        $.ryan = function() {
+            console.log('$.ryan');
+        };
+
     };
 
-    return new main();
+    fn.renderPage = function() {
+        var html = $('#init-tmpl').html(),
+            render;
+        Mustache.parse( html );
+        render = Mustache.render( html, {
+            IMG_PATH: config.IMG_PATH,
+            RANDOM: config.RANDOM
+        } );
+        $('#page-init').html( render );
+    };
+
+    fn.onLoad = function() {
+        this.handleClick();
+        //this.zeptoTest();
+        this.renderPage();
+    };
+
+    return new Init();
 
 })();
 
-module.exports =  main;
+module.exports =  init;
