@@ -53,7 +53,7 @@ var init = (function() {
         Mustache.parse( html );
         render = Mustache.render( html, {
             IMG_PATH: config.IMG_PATH,
-            RANDOM: config.RANDOM
+            DATE: config.DATE
         } );
         $('#page-init').html( render );
     };
