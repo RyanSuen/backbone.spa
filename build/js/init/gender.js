@@ -20,15 +20,13 @@ var Gender = (function() {
             var $this = $(this);
             $this.addClass('active').siblings('li').removeClass('active');
             that.data.gender = $this.data('id');
-            console.log(that.data);
-            console.log(config.APP_URL);
         });
         $('#pre-btn').on('click',function(){
             location.href = config.PAGE_URL.INIT_PATH;
         });
         $('#next-btn').on('click',function(){
             location.href = config.PAGE_URL.MAIN_PATH;
-        })
+        });
     };
 
     return new gender;

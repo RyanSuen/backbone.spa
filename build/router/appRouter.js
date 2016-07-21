@@ -19,14 +19,7 @@ module.exports = Backbone.Router.extend({    //创建路由
     },
 
     indexAction: function() {
-
         //html,css
-
-
-        //js
-        /*var init = require('../js/init/init.js');
-        init.onLoad();*/
-        /*//html,css
         var mainPage =  require('../views/part1/main.html'),
             mainCss = require('../less/part1/main.less'),
             merge = mergeHtmlAndCss(mainCss, mainPage);
@@ -34,7 +27,7 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         //js
         var main = require('../js/part1/main.js');
-        main.onLoad();*/
+        main.onLoad();
     },
 
     initAction: function () {
@@ -50,8 +43,8 @@ module.exports = Backbone.Router.extend({    //创建路由
             genderCss = require('../less/init/gender.less'),
             merge = mergeHtmlAndCss(genderCss, genderPage);
         $('body').html( merge ).addClass('animated fadeIn');
-        var Gender = require('../js/init/gender.js');
-        Gender.onLoad();
+        var gender = require('../js/init/gender.js');
+        gender.onLoad();
     },
 
     getTeamsAction: function() {

@@ -1,4 +1,51 @@
 @import "../common/reset";
 @import "../common/public";
 @import "../common/css3function";
+@import "../common/config";
+
+.main{
+  .main-title{
+    background-color: #24d7cc;
+    background-image: url('@{IMAGE-PATH}main_bg.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    color: #FFFFFF;
+    .left{
+      margin-left: 1.1875rem;
+    }
+    .right{
+      margin-right: 2.1875rem;
+    }
+    .date{
+      width: 6.8125rem;
+      height: 1.1875rem;
+      line-height: 1.1875rem;
+      margin: 0 auto;
+      i{
+        display: inline-block;
+        width: .5rem;
+        height: .8125rem;
+        background-position: center center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+        &.pre{
+          background-image: url("@{IMAGE-PATH}main_icon_pre.png");
+        }
+        &.next{
+          background-image: url("@{IMAGE-PATH}main_icon_next.png");
+        }
+      }
+      span{
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0 .25rem;
+        font-size:1.0625rem;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
 
