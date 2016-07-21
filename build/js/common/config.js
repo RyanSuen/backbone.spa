@@ -8,7 +8,9 @@ module.exports = {
     IMG_PATH: '',
     APP_URL:'',
     PAGE_URL: {
-        INIT_PATH: commonPagePath +'#inits'
+        INIT_PATH: commonPagePath +'#inits',
+        INIT_GENDER_PATH: commonPagePath+'#inits/gender',
+        MAIN_PATH: commonPagePath
     },
     API_URL: {
 

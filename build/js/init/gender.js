@@ -24,7 +24,10 @@ var Gender = (function() {
             console.log(config.APP_URL);
         });
         $('#pre-btn').on('click',function(){
-            location.href = config.APP_URL;
+            location.href = config.PAGE_URL.INIT_PATH;
+        });
+        $('#next-btn').on('click',function(){
+            location.href = config.PAGE_URL.MAIN_PATH;
         })
     };
 

@@ -103,6 +103,7 @@
 	    routes: {
 	        "": "indexAction",
 	        "inits": "initAction",
+	        "inits/:gender": "initGenderAction",
 	        "teams": "getTeamsAction",
 	        "teams/:country": "getTeamsCountryAction",
 	        "teams/:country/:name": "getTeamAction",
@@ -112,10 +113,7 @@
 	    indexAction: function() {
 	
 	        //html,css
-	        var initPage =  __webpack_require__(9),
-	            initCss = __webpack_require__(10),
-	            merge = mergeHtmlAndCss(initCss, initPage);
-	        $('body').html( merge ).addClass('animated fadeIn');
+	
 	
 	        //js
 	        /*var init = require('../js/init/init.js');
@@ -132,6 +130,14 @@
 	    },
 	
 	    initAction: function () {
+	        var initPage =  __webpack_require__(9),
+	            initCss = __webpack_require__(10),
+	            merge = mergeHtmlAndCss(initCss, initPage);
+	        $('body').html( merge ).addClass('animated fadeIn');
+	    },
+	
+	
+	    initGenderAction: function () {
 	        var genderPage =  __webpack_require__(13),
 	            genderCss = __webpack_require__(14),
 	            merge = mergeHtmlAndCss(genderCss, genderPage);
@@ -141,7 +147,7 @@
 	    },
 	
 	    getTeamsAction: function() {
-	        var module2 = __webpack_require__(17);
+	        var module2 = __webpack_require__(18);
 	        $('body').html( module2 ).addClass('animated fadeIn');
 	    },
 	
@@ -256,7 +262,7 @@
 /* 13 */
 /***/ function(module, exports) {
 
-	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div class=\"gender\">\r\n    <header class=\"title\">\r\n        <h4>因男孩和女孩成长速度有差异</h4>\r\n        <h4>请选择宝宝性别</h4>\r\n    </header>\r\n    <ul id=\"select-sex\">\r\n        <li class=\"boy active\" data-id=\"1\">\r\n            <i></i>\r\n            <span>男孩</span>\r\n        </li>\r\n        <li class=\"girl\" data-id=\"0\">\r\n            <i></i>\r\n            <span>女孩</span>\r\n        </li>\r\n    </ul>\r\n    <div class=\"btn clear\">\r\n        <span class=\"left\">上一步</span>\r\n        <span class=\"right active\">完成</span>\r\n    </div>\r\n</div>\r\n\r\n";
+	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div class=\"gender\">\r\n    <header class=\"title\">\r\n        <h4>因男孩和女孩成长速度有差异</h4>\r\n        <h4>请选择宝宝性别</h4>\r\n    </header>\r\n    <ul id=\"select-sex\">\r\n        <li class=\"boy active\" data-id=\"1\">\r\n            <i></i>\r\n            <span>男孩</span>\r\n        </li>\r\n        <li class=\"girl\" data-id=\"0\">\r\n            <i></i>\r\n            <span>女孩</span>\r\n        </li>\r\n    </ul>\r\n    <div class=\"btn clear\">\r\n        <span class=\"left\" id=\"pre-btn\">上一步</span>\r\n        <span class=\"right active\" id=\"next-btn\">完成</span>\r\n    </div>\r\n</div>\r\n\r\n";
 
 /***/ },
 /* 14 */
@@ -296,7 +302,7 @@
 	/**
 	 * Created by Administrator on 2016/7/20 0020.
 	 */
-	var config = __webpack_require__(20);
+	var config = __webpack_require__(17);
 	var Gender = (function() {
 	    var gender = function() {},
 	        fn = gender.prototype;
@@ -319,7 +325,10 @@
 	            console.log(config.APP_URL);
 	        });
 	        $('#pre-btn').on('click',function(){
-	            location.href = config.APP_URL;
+	            location.href = config.PAGE_URL.INIT_PATH;
+	        });
+	        $('#next-btn').on('click',function(){
+	            location.href = config.PAGE_URL.MAIN_PATH;
 	        })
 	    };
 	
@@ -333,14 +342,6 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module2</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
-
-/***/ },
-/* 18 */,
-/* 19 */,
-/* 20 */
-/***/ function(module, exports) {
-
 	/**
 	 * Created by sun yi on 2016/7/20.
 	 */
@@ -351,12 +352,20 @@
 	    IMG_PATH: '',
 	    APP_URL:'',
 	    PAGE_URL: {
-	        INIT_PATH: commonPagePath +'#inits'
+	        INIT_PATH: commonPagePath +'#inits',
+	        INIT_GENDER_PATH: commonPagePath+'#inits/gender',
+	        MAIN_PATH: commonPagePath
 	    },
 	    API_URL: {
 	
 	    }
 	};
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	module.exports = "<!--Created by sun yi on 2016/7/15.-->\r\n<div id=\"index\">\r\n    <h1>module2</h1>\r\n    <p>\r\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem consectetur corporis, delectus doloribus ea earum est illo illum in ipsam ipsum magnam mollitia neque officiis, perspiciatis quia quidem recusandae saepe sapiente sit suscipit velit vitae voluptatem voluptatum! Consectetur cum debitis, eligendi harum ipsum possimus. A accusantium animi itaque non.\r\n    </p>\r\n</div>";
 
 /***/ }
 /******/ ]);
