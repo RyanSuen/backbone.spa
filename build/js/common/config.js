@@ -13,5 +13,6 @@ module.exports = {
     },
     API_URL: {
 
-    }
+    },
+    RANDOM:'?random='+Math.random().toString().replace('.','')
 };

@@ -1,33 +1,34 @@
-/**
- * Created by sun yi on 2016/7/15.
- */
+
+var config = require('../common/config');
 
 var main = (function() {
 
     var main = function() {},
         fn = main.prototype;
 
-    fn.handleClick = function(){
-        $('#link').on('click',function(){
-            location.href = "/backbone.spa/#teams";
-        });
-        /*$("#fileinput").change(function(e){
-            console.log(e.target,e.dataTransfer);
-            var file = e.target.files||e.dataTransfer.files;
-            if(file){
-                var reader = new FileReader();
-                reader.onload=function(){
-                    $("<img src='"+this.result+"'/>").appendTo("body");
-
-                };
-                console.log(reader);
-                reader.readAsDataURL(file);
-            }
-        });*/
+    fn.onLoad = function() {
+        this.renderPage();
+        this.handleClick();
     };
 
-    fn.onLoad = function() {
-        this.handleClick();
+    fn.data = {
+        IMG_PATH: config.IMG_PATH,
+        RANDOM:config.RANDOM
+    }
+
+    fn.renderPage = function () {
+        this.loadTpl($('#title-tpl'),$('#main-title'),this.data)
+    };
+
+    fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据
+        var template = $tpl.html();
+        Mustache.parse(template);
+        var rendered = Mustache.render(template, data);
+        $target.html(rendered);
+    };
+
+    fn.handleClick = function(){
+
     };
 
     return new main();

@@ -4,18 +4,23 @@
 @import "../common/config";
 
 .main{
-  .main-title{
+  .info{
     background-color: #24d7cc;
     background-image: url('@{IMAGE-PATH}main_bg.png');
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 100% auto;
     color: #FFFFFF;
+  }
+  .main-title{
+    padding:.75rem 0;
     .left{
       margin-left: 1.1875rem;
     }
     .right{
       margin-right: 2.1875rem;
+      width: 1.3125rem;
+      height: 1.1875rem;
     }
     .date{
       width: 6.8125rem;
@@ -45,6 +50,11 @@
         font-size:1.0625rem;
         color: #FFFFFF;
       }
+    }
+  }
+  .how-old{
+    p{
+      text-align: center;
     }
   }
 }

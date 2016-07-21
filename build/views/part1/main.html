@@ -1,19 +1,29 @@
 <!--Created by sun yi on 2016/7/15.-->
 <div class="main">
-    <div id="main-title"></div>
-    <!--<script type="x-tmpl-mustache">-->
-        <header class="main-title clear">
+    <section class="info">
+        <div id="main-title"></div>
+        <script id="title-tpl" type="x-tmpl-mustache">
+            <header class="main-title clear">
+                <div class="left">
+                    <span>今天</span>
+                </div>
+                <div class="right">
+                    <img src="{{IMG_PATH}}main_icon_msg.png{{RANDOM}}" />
+                </div>
+                <div class="date">
+                    <i class="pre"></i>
+                    <span>12月12日</span>
+                    <i class="next"></i>
+                </div>
+            </header>
+        </script>
+        <div class="how-old">
+            <p>一个月6天</p>
+        </div>
+        <div class="base-info clear">
             <div class="left">
-                <span>今天</span>
+
             </div>
-            <div class="right">
-                <img src="{{img_url}}main_icon_msg.png" />
-            </div>
-            <div class="date">
-                <i class="pre"></i>
-                <span>12月12日</span>
-                <i class="next"></i>
-            </div>
-        </header>
-<!--    </script>-->
+        </div>
+    </section>
 </div>
