@@ -3,10 +3,10 @@
  */
 var config = require('../common/config');
 
-var Gender = (function() {
+var gender = (function() {
 
-    var gender = function() {},
-        fn = gender.prototype;
+    var Gender = function() {},
+        fn = Gender.prototype;
 
     fn.onLoad = function(){
         this.handleClick();
@@ -33,8 +33,8 @@ var Gender = (function() {
         });
     };
 
-    return new gender;
+    return new Gender();
 
 })();
 
-module.exports = Gender;
+module.exports = gender;

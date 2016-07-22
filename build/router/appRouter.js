@@ -24,7 +24,8 @@ module.exports = Backbone.Router.extend({    //创建路由
         var mainPage =  require('../views/part1/main.html'),
             mainCss = require('../less/part1/main.less'),
             merge = mergeHtmlAndCss(mainCss, mainPage);
-        $('body').html( merge ).addClass('animated fadeIn');
+
+        $('#page-main-container').html( merge ).addClass('animated fadeIn');
 
         //js
         var main = require('../js/part1/main.js');
