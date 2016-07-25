@@ -12,9 +12,8 @@ module.exports = Backbone.Router.extend({    //创建路由
         "": "indexAction",
         "inits": "initAction",
         "inits/:gender": "initGenderAction",
-        "teams": "getTeamsAction",
-        "teams/:country": "getTeamsCountryAction",
-        "teams/:country/:name": "getTeamAction",
+        "finds":"findAction",
+        "mines":"mineAction",
         "error": "fourOfOurAction"
     },
 
@@ -56,17 +55,24 @@ module.exports = Backbone.Router.extend({    //创建路由
         gender.onLoad();
     },
 
-    getTeamsAction: function() {
-        var module2 = require('../views/part1/module2.html');
-        $('body').html( module2 ).addClass('animated fadeIn');
+    findAction: function () {
+        var findPage =  require('../views/part2/find.html'),
+            findCss = require('../less/part2/find.less'),
+            merge = mergeHtmlAndCss(findCss, findPage);
+
+        $('#page-main-container').html( merge ).addClass('animated fadeIn');
+
+       /* //js
+        var main = require('../js/part1/main.js');
+        main.onLoad();*/
     },
 
-    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
-        console.log('i will get all countries!');
-    },
+    mineAction:function(){
+        var minePage =  require('../views/part3/mine.html'),
+            mineCss = require('../less/part3/mine.less'),
+            merge = mergeHtmlAndCss(mineCss, minePage);
 
-    getTeamAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
-        console.log('get team!');
+        $('#page-main-container').html( merge ).addClass('animated fadeIn');
     },
 
     fourOfOurAction: function() {    console.log( 'error' );

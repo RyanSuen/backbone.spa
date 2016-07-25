@@ -9,7 +9,9 @@ module.exports = {
     PAGE_URL: {
         INIT_PATH: commonPagePath +'#inits',
         INIT_GENDER_PATH: commonPagePath+'#inits/gender',
-        MAIN_PATH: commonPagePath
+        MAIN_PATH: commonPagePath,
+        FIND_PATH: commonPagePath+'#finds',
+        MINE_PATH:commonPagePath+'#mines'
     },
     API_URL: {
 

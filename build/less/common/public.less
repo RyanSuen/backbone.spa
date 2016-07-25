@@ -1,26 +1,8 @@
-@rootBgColor: #ffffff;
+@rootBgColor: #f5f8fa;
 html{
 	background-color:@rootBgColor;
 }
 
-.container{
-    background: @rootBgColor;
-    width:100%;
-    height:auto;
-    min-height: 100%;
-    position:relative;
-    min-width:20rem;
-    max-width:30rem;
-    overflow:hidden;
-    margin:0 auto;
-    color: #101010;
-}
-.wrap{
-  width:100%;
-  height:auto;
-  min-height: 100%;
-  overflow: hidden;
-}
 img {
   width:100%;
   display: block;
@@ -60,4 +42,18 @@ a.a-common:link, a.a-common:visited, a.a-common:hover, a.a-common:active {
 }
 .rlt {
   position: relative;
+}
+
+/*common title*/
+.common-title{
+  h4{
+    text-align: center;
+    font-size: 1rem;
+    color: #37d1d5;
+    font-weight: 500;
+    border-bottom: 1px solid #dadcde;
+    .bs(0 .0625rem .5rem #dadcde);
+    height: 2.75rem;
+    line-height: 2.75rem;
+  }
 }
