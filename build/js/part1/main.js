@@ -3,8 +3,8 @@ var config = require('../common/config');
 
 var main = (function() {
 
-    var main = function() {},
-        fn = main.prototype;
+    var Main = function() {},
+        fn = Main.prototype;
 
     fn.onLoad = function() {
         this.renderPage();
@@ -14,10 +14,10 @@ var main = (function() {
     fn.data = {
         IMG_PATH: config.IMG_PATH,
         RANDOM:config.RANDOM
-    }
+    };
 
     fn.renderPage = function () {
-        this.loadTpl($('#title-tpl'),$('#main-title'),this.data)
+        this.loadTpl($('#title-tpl'),$('#main'),this.data)
     };
 
     fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据
@@ -31,7 +31,7 @@ var main = (function() {
 
     };
 
-    return new main();
+    return new Main();
 
 })();
 
