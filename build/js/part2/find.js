@@ -1,14 +1,13 @@
 
 var config = require('../common/config');
 
-var main = (function() {
+var find = (function() {
 
-    var Main = function() {},
-        fn = Main.prototype;
+    var Find = function() {},
+        fn = Find.prototype;
 
-    fn.onLoad = function() {
+    fn.onLoad = function () {
         this.renderPage();
-        this.handleClick();
     };
 
     fn.data = {
@@ -17,7 +16,7 @@ var main = (function() {
     };
 
     fn.renderPage = function () {
-        this.loadTpl($('#title-tpl'),$('#main'),this.data)
+        this.loadTpl($('#find-tpl'),$('#find'),this.data)
     };
 
     fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据
@@ -27,12 +26,8 @@ var main = (function() {
         $target.html(rendered);
     };
 
-    fn.handleClick = function(){
-
-    };
-
-    return new Main();
+    return new Find();
 
 })();
 
-module.exports =  main;
+module.exports = find;

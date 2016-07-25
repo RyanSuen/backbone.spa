@@ -1,14 +1,13 @@
 
 var config = require('../common/config');
 
-var main = (function() {
+var mine = (function() {
 
-    var Main = function() {},
-        fn = Main.prototype;
+    var Mine = function() {},
+        fn = Mine.prototype;
 
-    fn.onLoad = function() {
+    fn.onLoad = function () {
         this.renderPage();
-        this.handleClick();
     };
 
     fn.data = {
@@ -17,7 +16,7 @@ var main = (function() {
     };
 
     fn.renderPage = function () {
-        this.loadTpl($('#title-tpl'),$('#main'),this.data)
+        this.loadTpl($('#mine-tpl'),$('#mine'),this.data)
     };
 
     fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据
@@ -27,12 +26,8 @@ var main = (function() {
         $target.html(rendered);
     };
 
-    fn.handleClick = function(){
-
-    };
-
-    return new Main();
+    return new Mine();
 
 })();
 
-module.exports =  main;
+module.exports = mine;

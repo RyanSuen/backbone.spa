@@ -62,9 +62,8 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         $('#page-main-container').html( merge ).addClass('animated fadeIn');
 
-       /* //js
-        var main = require('../js/part1/main.js');
-        main.onLoad();*/
+        var find = require('../js/part2/find.js');
+        find.onLoad();
     },
 
     mineAction:function(){
@@ -73,6 +72,9 @@ module.exports = Backbone.Router.extend({    //创建路由
             merge = mergeHtmlAndCss(mineCss, minePage);
 
         $('#page-main-container').html( merge ).addClass('animated fadeIn');
+
+        var mine = require('../js/part3/mine.js');
+        mine.onLoad();
     },
 
     fourOfOurAction: function() {    console.log( 'error' );

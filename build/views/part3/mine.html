@@ -1,71 +1,73 @@
 
 <div class="mine">
     <div id="mine"></div>
-    <header class="common-title">
-        <h4>我</h4>
-    </header>
-    <div class="clear mine-info">
-        <div class="left">
-            <img src="/backbone.spa/images/mine_baby_avatar.png" />
+    <script id="mine-tpl" type="x-tmpl-mustache">
+        <header class="common-title">
+            <h4>我</h4>
+        </header>
+        <div class="clear mine-info">
+            <div class="left">
+                <img src="{{IMG_PATH}}mine_baby_avatar.png{{DATE}}" />
+            </div>
+            <div class="right">
+                <i>
+                    <img src="{{IMG_PATH}}mine_icon_right.png{{DATE}}" />
+                </i>
+            </div>
+            <div class="auto">
+                <h4>小宝宝</h4>
+                <p>宝宝已出生</p>
+            </div>
         </div>
-        <div class="right">
-            <i>
-                <img src="/backbone.spa/images/mine_icon_right.png" />
-            </i>
+        <div class="clear mine-keep">
+            <div class="left">
+                <img src="{{IMG_PATH}}mine_icon_01.png{{DATE}}" />
+            </div>
+            <div class="right">
+                <i>
+                    <img src="{{IMG_PATH}}mine_icon_right.png{{DATE}}" />
+                </i>
+            </div>
+            <div class="auto">
+                <h4>我的收藏</h4>
+            </div>
         </div>
-        <div class="auto">
-            <h4>小宝宝</h4>
-            <p>宝宝已出生</p>
+        <div class="mine-other">
+            <ul>
+                <li class="clear">
+                    <div class="left">
+                        <img src="{{IMG_PATH}}mine_icon_02.png{{DATE}}" />
+                    </div>
+                    <div class="auto">
+                        <h4>推荐给好友</h4>
+                        <i class="mine_icon_right">
+                            <img src="{{IMG_PATH}}mine_icon_right.png{{DATE}}" />
+                        </i>
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="left">
+                        <img src="{{IMG_PATH}}mine_icon_03.png{{DATE}}" />
+                    </div>
+                    <div class="auto">
+                        <h4>意见反馈</h4>
+                        <i class="mine_icon_right">
+                            <img src="{{IMG_PATH}}mine_icon_right.png{{DATE}}" />
+                        </i>
+                    </div>
+                </li>
+                <li class="clear">
+                    <div class="left">
+                        <img src="{{IMG_PATH}}mine_icon_04.png{{DATE}}" />
+                    </div>
+                    <div class="auto">
+                        <h4 class="set">设置</h4>
+                        <i class="mine_icon_right">
+                            <img src="{{IMG_PATH}}mine_icon_right.png{{DATE}}" />
+                        </i>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="clear mine-keep">
-        <div class="left">
-            <img src="/backbone.spa/images/mine_icon_01.png" />
-        </div>
-        <div class="right">
-            <i>
-                <img src="/backbone.spa/images/mine_icon_right.png" />
-            </i>
-        </div>
-        <div class="auto">
-            <h4>我的收藏</h4>
-        </div>
-    </div>
-    <div class="mine-other">
-        <ul>
-            <li class="clear">
-                <div class="left">
-                    <img src="/backbone.spa/images/mine_icon_02.png" />
-                </div>
-                <div class="auto">
-                    <h4>推荐给好友</h4>
-                    <i class="mine_icon_right">
-                        <img src="/backbone.spa/images/mine_icon_right.png" />
-                    </i>
-                </div>
-            </li>
-            <li class="clear">
-                <div class="left">
-                    <img src="/backbone.spa/images/mine_icon_03.png" />
-                </div>
-                <div class="auto">
-                    <h4>意见反馈</h4>
-                    <i class="mine_icon_right">
-                        <img src="/backbone.spa/images/mine_icon_right.png" />
-                    </i>
-                </div>
-            </li>
-            <li class="clear">
-                <div class="left">
-                    <img src="/backbone.spa/images/mine_icon_04.png" />
-                </div>
-                <div class="auto">
-                    <h4 class="set">设置</h4>
-                    <i class="mine_icon_right">
-                        <img src="/backbone.spa/images/mine_icon_right.png" />
-                    </i>
-                </div>
-            </li>
-        </ul>
-    </div>
+    </script>
 </div>
