@@ -14,7 +14,7 @@ var main = (function() {
     fn.data = {
         IMG_PATH: config.IMG_PATH,
         RANDOM:config.RANDOM
-    }
+    };
 
     fn.renderPage = function () {
         this.loadTpl($('#title-tpl'),$('#main'),this.data)
