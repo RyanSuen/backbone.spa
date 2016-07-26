@@ -28,6 +28,7 @@ var mine = (function() {
 
     return new Mine();
 
+
 })();
 
 module.exports = mine;

@@ -12,6 +12,7 @@ module.exports = Backbone.Router.extend({    //创建路由
         "": "indexAction",
         "inits": "initAction",
         "inits/:gender": "initGenderAction",
+        "mains/record":"mainRecordAction",
         "finds":"findAction",
         "mines":"mineAction",
         "error": "fourOfOurAction"
@@ -53,6 +54,16 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         var gender = require('../js/init/gender.js');
         gender.onLoad();
+    },
+    mainRecordAction: function () {
+
+        var recordPage =  require('../views/part1/record.html'),
+            recordCss = require('../less/part1/record.less'),
+            merge = mergeHtmlAndCss(recordCss, recordPage);
+        $('body').html( merge ).addClass('animated fadeIn');
+
+        var record = require('../js/part1/record.js');
+        record.onLoad();
     },
 
     findAction: function () {
