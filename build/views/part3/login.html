@@ -1,0 +1,85 @@
+<div id="login"></div>
+<script id="login-tpl" type="x-tmpl-mustache">
+<div class="login">
+    <section class="login-top">
+        <header class="login-title">
+            <h4>艾茸宝宝</h4>
+        </header>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{IMG_PATH}}login_pic_01.png{{DATE}}" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{{IMG_PATH}}login_pic_02.png{{DATE}}" />
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="login-info">
+        <div class="login-nav">
+            <ul class="li-left clear">
+                <li class="active">
+                    <span>登录</span>
+                </li>
+                <li>
+                    <span>注册</span>
+                </li>
+            </ul>
+        </div>
+        <div id="login-part">
+            <div class="login-input">
+                <ul>
+                    <li>
+                        <div class="input clear">
+                            <div class="left phone">+86</div>
+                            <div class="auto">
+                                <input type="text" id="login-name" placeholder="請輸手机号" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input clear">
+                            <div class="left password">密码</div>
+                            <div class="auto">
+                                <input type="password" id="login-pwd" placeholder="請輸入密碼" />
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn" id="login-btn">
+                <span>登錄</span>
+            </div>
+        </div>
+        <div id="register-part" style="display: none;">
+            <div class="login-input">
+                <ul>
+                    <li>
+                        <div class="input clear">
+                            <div class="left phone">+86</div>
+                            <div class="auto">
+                                <input type="text" id="register-name" placeholder="請輸手机号" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input clear">
+                            <div class="right">获取验证码</div>
+                            <div class="auto">
+                                <input type="text" id="register-pwd" placeholder="請輸入验证码" />
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn" id="register-btn">
+                <span>下一步</span>
+            </div>
+        </div>
+    </section>
+</div>
+</script>

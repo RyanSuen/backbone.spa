@@ -7,6 +7,7 @@ var record = (function() {
         fn = Record.prototype;
 
     fn.onLoad = function() {
+        this.renderPage();
         this.renderChart([50,60,70,80,100,69,66,63,68,77,45,88,74,40]);
     };
 
@@ -104,7 +105,7 @@ var record = (function() {
     };
 
     fn.renderPage = function () {
-        //this.loadTpl($('#title-tpl'),$('#main'),this.data)
+        this.loadTpl($('#record-tpl'),$('#record'),this.data)
     };
 
     fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据

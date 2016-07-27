@@ -3,17 +3,23 @@ var config = require('../common/config');
 
 var main = (function() {
 
+    "use strict";
+
     var Main = function() {},
         fn = Main.prototype;
 
     fn.onLoad = function() {
         this.renderPage();
-        this.handleClick();
+        this.clickHandle();
     };
 
     fn.data = {
         IMG_PATH: config.IMG_PATH,
         DATE:config.DATE
+    };
+
+    fn.clickHandle = function () {
+        this.goToRecord();
     };
 
     fn.renderPage = function () {
@@ -27,8 +33,10 @@ var main = (function() {
         $target.html(rendered);
     };
 
-    fn.handleClick = function(){
-
+    fn.goToRecord = function(){
+        $('.today-list').on('click', function () {
+            location.href = config.PAGE_URL.MAIN_RECORD_PATH;
+        })
     };
 
     return new Main();

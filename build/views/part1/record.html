@@ -1,4 +1,5 @@
 <div id="record"></div>
+<script id="record-tpl" type="x-tmpl-mustache">
 <div class="record">
     <header class="common-subhead">
         <h4>宝宝身高体重记录</h4>
@@ -21,12 +22,12 @@
             <span>正常范围：473.0-544.1cm</span>
         </div>
         <div class="bottom">
-            <img src="/backbone.spa/images/init_top.png" />
+            <img src="{{IMG_PATH}}init_top.png{{DATE}}" />
         </div>
     </section>
     <section class="record-bottom">
         <div class="record-intro">
-            <img src="/backbone.spa/images/record_pic.png">
+            <img src="{{IMG_PATH}}record_pic.png{{DATE}}">
             <p>记录之后会有数据解读和建议哦</p>
         </div>
         <div class="record-data">
@@ -42,5 +43,20 @@
         <div class="record-popup-title">
             <p>记录身高</p>
         </div>
+        <div class="record-insert-data">
+            <div class="input">
+                <span>
+                    <input type="text" name="number" />
+                </span>
+                <span>kg</span>
+            </div>
+            <div class="record-date">
+                <p>记录日期：2016年7月16日</p>
+            </div>
+            <div class="record-save-btn">
+                <span>保存</span>
+            </div>
+        </div>
     </div>
 </div>
+</script>

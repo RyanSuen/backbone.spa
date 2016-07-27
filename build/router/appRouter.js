@@ -12,9 +12,11 @@ module.exports = Backbone.Router.extend({    //创建路由
         "": "indexAction",
         "inits": "initAction",
         "inits/:gender": "initGenderAction",
-        "mains/record":"mainRecordAction",
+        "mains": "indexAction",
+        "mains/:record":"mainRecordAction",
         "finds":"findAction",
         "mines":"mineAction",
+        "mines/:login":"mineLoginAction",
         "error": "fourOfOurAction"
     },
 
@@ -26,7 +28,7 @@ module.exports = Backbone.Router.extend({    //创建路由
             merge = mergeHtmlAndCss(mainCss, mainPage);
 
         $('#page-main-container').html( merge ).addClass('animated fadeIn');
-
+        $('#page-menu').show();
         //js
         var main = require('../js/part1/main.js');
         main.onLoad();
@@ -35,11 +37,13 @@ module.exports = Backbone.Router.extend({    //创建路由
 
     initAction: function () {
 
+        //html,css
         var initPage =  require('../views/init/init.html'),
             initCss = require('../less/init/init.less'),
             merge = mergeHtmlAndCss(initCss, initPage);
         $('body').html( merge ).addClass('animated fadeIn');
 
+        //js
         var init = require('../js/init/init.js');
         init.onLoad();
 
@@ -86,6 +90,17 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         var mine = require('../js/part3/mine.js');
         mine.onLoad();
+    },
+
+    mineLoginAction:function(){
+        var loginPage =  require('../views/part3/login.html'),
+            loginCss = require('../less/part3/login.less'),
+            merge = mergeHtmlAndCss(loginCss, loginPage);
+
+        $('body').html( merge ).addClass('animated fadeIn');
+
+        var login = require('../js/part3/login.js');
+        login.onLoad();
     },
 
     fourOfOurAction: function() {    console.log( 'error' );
