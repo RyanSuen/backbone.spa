@@ -27,9 +27,9 @@ var menu = (function () {
             if($this.index()==0){
                 location.href = config.PAGE_URL.MAIN_PATH;
             }else if($this.index()==1){
-                location.href = config.PAGE_URL.INIT_GENDER_PATH;//todo
-            }else{
-                location.href = config.PAGE_URL.INIT_PATH;//todo
+                location.href = config.PAGE_URL.FIND_PATH;
+            }else if($this.index()==2){
+                location.href = config.PAGE_URL.MINE_PATH;
             }
         })
     };

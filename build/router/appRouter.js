@@ -12,9 +12,9 @@ module.exports = Backbone.Router.extend({    //创建路由
         "": "indexAction",
         "inits": "initAction",
         "inits/:gender": "initGenderAction",
-        "teams": "getTeamsAction",
-        "teams/:country": "getTeamsCountryAction",
-        "teams/:country/:name": "getTeamAction",
+        "mains/record":"mainRecordAction",
+        "finds":"findAction",
+        "mines":"mineAction",
         "error": "fourOfOurAction"
     },
 
@@ -55,18 +55,37 @@ module.exports = Backbone.Router.extend({    //创建路由
         var gender = require('../js/init/gender.js');
         gender.onLoad();
     },
+    mainRecordAction: function () {
 
-    getTeamsAction: function() {
-        var module2 = require('../views/part1/module2.html');
-        $('body').html( module2 ).addClass('animated fadeIn');
+        var recordPage =  require('../views/part1/record.html'),
+            recordCss = require('../less/part1/record.less'),
+            merge = mergeHtmlAndCss(recordCss, recordPage);
+        $('body').html( merge ).addClass('animated fadeIn');
+
+        var record = require('../js/part1/record.js');
+        record.onLoad();
     },
 
-    getTeamsCountryAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
-        console.log('i will get all countries!');
+    findAction: function () {
+        var findPage =  require('../views/part2/find.html'),
+            findCss = require('../less/part2/find.less'),
+            merge = mergeHtmlAndCss(findCss, findPage);
+
+        $('#page-main-container').html( merge ).addClass('animated fadeIn');
+
+        var find = require('../js/part2/find.js');
+        find.onLoad();
     },
 
-    getTeamAction: function(a, b, c) {    console.log('a:', a, ',b:', b, ',c:', c);
-        console.log('get team!');
+    mineAction:function(){
+        var minePage =  require('../views/part3/mine.html'),
+            mineCss = require('../less/part3/mine.less'),
+            merge = mergeHtmlAndCss(mineCss, minePage);
+
+        $('#page-main-container').html( merge ).addClass('animated fadeIn');
+
+        var mine = require('../js/part3/mine.js');
+        mine.onLoad();
     },
 
     fourOfOurAction: function() {    console.log( 'error' );
