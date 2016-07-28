@@ -7,12 +7,12 @@ var commonPagePath = '/backbone.spa/';
 module.exports = {
     IMG_PATH: commonPagePath+'images/',
     PAGE_URL: {
-        INIT_PATH: commonPagePath +'#inits',
-        INIT_GENDER_PATH: commonPagePath+'#inits/gender',
-        MAIN_PATH: commonPagePath + '#mains',
-        MAIN_RECORD_PATH: commonPagePath + '#mains/record',
-        FIND_PATH: commonPagePath+'#finds',
-        MINE_PATH:commonPagePath+'#mines'
+        INIT_PATH: commonPagePath +'#init',
+        INIT_GENDER_PATH: commonPagePath+'#init/gender',
+        MAIN_PATH: commonPagePath + '#main',
+        MAIN_RECORD_PATH: commonPagePath + '#record',
+        FIND_PATH: commonPagePath+'#find',
+        MINE_PATH:commonPagePath+'#mine'
     },
     API_URL: {
 

@@ -8,12 +8,24 @@ var record = (function() {
 
     fn.onLoad = function() {
         this.renderPage();
+        this.events();
         this.renderChart([50,54,60,61,62,63,66,67,68,77,80,88,89,90],[45,50,60,70,80,84,82,83,86,89,90,96,97,100],[60,62,64,68,80,81,89,90,94,97,100,103,109,110]);
     };
 
     fn.data = {
         IMG_PATH: config.IMG_PATH,
         DATE:config.DATE
+    };
+
+    fn.events = function () {
+        this.eventGoBackClick();
+    };
+
+    /*点击返回上一页*/
+    fn.eventGoBackClick = function () {
+        $('#back').on('click', function GoBackClickHandle() {
+            location.href = config.PAGE_URL.MAIN_PATH;
+        })
     };
 
     /**
@@ -155,9 +167,6 @@ var record = (function() {
         $target.html(rendered);
     };
 
-    fn.handleClick = function(){
-
-    };
 
     return new Record();
 

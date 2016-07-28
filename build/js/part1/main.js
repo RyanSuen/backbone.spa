@@ -23,11 +23,11 @@ var main = (function() {
     };
 
     fn.renderPage = function () {
-        this.loadTpl($('#title-tpl'),$('#main'),this.data)
+        this.loadTpl($('#main-tpl'),$('#main'),this.data)
     };
 
     fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据
-        var template = $tpl.html();
+        var template = $tpl.html();   console.log(template,123);
         Mustache.parse(template);
         var rendered = Mustache.render(template, data);
         $target.html(rendered);
