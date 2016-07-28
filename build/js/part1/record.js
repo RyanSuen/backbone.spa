@@ -8,7 +8,7 @@ var record = (function() {
 
     fn.onLoad = function() {
         this.renderPage();
-        this.renderChart([50,60,70,80,100,69,66,63,68,77,45,88,74,40]);
+        this.renderChart([50,54,60,61,62,63,66,67,68,77,80,88,89,90],[45,50,60,70,80,84,82,83,86,89,90,96,97,100],[60,62,64,68,80,81,89,90,94,97,100,103,109,110]);
     };
 
     fn.data = {
@@ -20,33 +20,73 @@ var record = (function() {
      * 绘制图表
      * @param chartData
      */
-    fn.renderChart = function (data) {
+    fn.renderChart = function (minData,maxData,data) {
         var ctx = document.getElementById("myChart").getContext("2d");
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13],
-                datasets: [{
-                    data: data,
-                    borderWidth: 1,
-                    lineTension: 0.1,
-                    backgroundColor: "rgba(221,255,253,.4)",
-                    borderColor: "#ff6382",
-                    borderCapStyle: 'butt',
-                    //borderDash: [5,5],
-                    //borderDashOffset: 0.5,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: '#ff6382',
-                    pointBackgroundColor: "#ff6382",
-                    pointBorderWidth: 7,
-                    //pointHoverRadius: 7,
-                    //pointHoverBackgroundColor: "rgba(255,99,130,1)",
-                    //pointHoverBorderColor: "rgba(220,220,220,1)",
-                    //pointHoverBorderWidth: 2,
-                    pointRadius: 1,
-                    //pointHitRadius: 10
-                },
-
+                datasets: [
+                    {
+                        data: data,
+                        borderWidth: 1,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(221,255,253,.4)",
+                        borderColor: "#ff6382",
+                        borderCapStyle: 'butt',
+                        //borderDash: [5,5],
+                        //borderDashOffset: 0.5,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#ff6382',
+                        pointBackgroundColor: "#ff6382",
+                        pointBorderWidth: 7,
+                        //pointHoverRadius: 7,
+                        //pointHoverBackgroundColor: "rgba(255,99,130,1)",
+                        //pointHoverBorderColor: "rgba(220,220,220,1)",
+                        //pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        //pointHitRadius: 10
+                    },
+                    {
+                        data: minData,
+                        borderWidth: 1,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(221,255,253,.4)",
+                        borderColor: "#ff6382",
+                        borderCapStyle: 'butt',
+                        //borderDash: [5,5],
+                        //borderDashOffset: 0.5,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#ff6382',
+                        pointBackgroundColor: "#ff6382",
+                        pointBorderWidth: 7,
+                        //pointHoverRadius: 7,
+                        //pointHoverBackgroundColor: "rgba(255,99,130,1)",
+                        //pointHoverBorderColor: "rgba(220,220,220,1)",
+                        //pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        //pointHitRadius: 10
+                    },
+                    {
+                        data: maxData,
+                        borderWidth: 1,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(221,255,253,.4)",
+                        borderColor: "#ff6382",
+                        borderCapStyle: 'butt',
+                        //borderDash: [5,5],
+                        //borderDashOffset: 0.5,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#ff6382',
+                        pointBackgroundColor: "#ff6382",
+                        pointBorderWidth: 7,
+                        //pointHoverRadius: 7,
+                        //pointHoverBackgroundColor: "rgba(255,99,130,1)",
+                        //pointHoverBorderColor: "rgba(220,220,220,1)",
+                        //pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        //pointHitRadius: 10
+                    }
                 ]
             },
             options: {

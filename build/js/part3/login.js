@@ -37,7 +37,6 @@ var login = (function() {
         $('.login-nav ul li').on('click',function tabNavClickHandle(){
             var $this = $(this);
             $this.addClass('active').siblings('li').removeClass('active');
-            console.log($this.index());
             if( $this.index() == 0 ){
                 $('#login-part').show();
                 $('#register-part').hide();
