@@ -91,6 +91,7 @@
   z-index: 1000;
   background-color: rgba(0,0,0,0.75);
   .record-popup-box{
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 16rem;
@@ -108,5 +109,56 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% auto;
+    p{
+      text-align: center;
+      color: #24d7cc;
+      font-size: 1.375rem;
+      padding-top: 1.75rem;
+    }
+  }
+  .record-insert-data{
+    width: 100%;
+    background-color: #FFFFFF;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    .input{
+      width: 11.125rem;
+      margin: 0 auto;
+      padding: 1.4375rem 0;
+      line-height: 2.625rem;
+      color: #24d7cc;
+      font-size: 1.25rem;
+      input{
+        text-align: center;
+        width: 9rem;
+        height: 2.625rem;
+        border: .0625rem solid #24d7cc;
+        .br(2.625rem);
+      }
+    }
+    span{
+      display: inline-block;
+    }
+  }
+  .record-date{
+    p{
+      color: #5e5e5e;
+      font-size: .875rem;
+      text-align: center;
+    }
+  }
+  .record-save-btn{
+    padding: 1rem 0;
+    span{
+      color: #FFFFFF;
+      width: 7.25rem;
+      display: block;
+      text-align: center;
+      height: 1.875rem;
+      line-height: 1.875rem;
+      background-color: #38e2dd;
+      margin: 0 auto;
+      .br(1.875rem);
+    }
   }
 }
