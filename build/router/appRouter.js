@@ -16,6 +16,7 @@ module.exports = Backbone.Router.extend({    //创建路由
         "record": "recordAction",
         "find": "findAction",
         "find/:lists": "listsAction",
+        "find/:lists/:details": "detailsAction",
         "mine": "mineAction",
         "login": "loginAction",
         "login/:name/:phone": "setPasswordAction",
@@ -120,6 +121,23 @@ module.exports = Backbone.Router.extend({    //创建路由
              find.onLoad();*/
         }
 
+    },
+
+    detailsAction: function (id,detailId) {
+        if(id == 0){
+            var babyDetailPage =  require('../views/part2/babyDetail.html'),
+                babyDetailCss = require('../less/part2/babyDetail.less'),
+                merge = mergeHtmlAndCss(babyDetailCss, babyDetailPage);
+
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
+
+           /* var babyKnow = require('../js/part2/babyKnow.js');
+            babyKnow.onLoad();*/
+        }else if (id == 1){
+
+        }
     },
 
     mineAction:function(){
