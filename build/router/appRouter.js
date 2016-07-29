@@ -15,6 +15,7 @@ module.exports = Backbone.Router.extend({    //创建路由
         "main": "indexAction",
         "record": "recordAction",
         "find": "findAction",
+        "find/:lists": "listsAction",
         "mine": "mineAction",
         "login": "loginAction",
         "login/:name/:phone": "setPasswordAction",
@@ -89,6 +90,36 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         var find = require('../js/part2/find.js');
         find.onLoad();
+    },
+
+    listsAction: function (id) {
+
+        if(id == 0){
+            var babyKnowPage =  require('../views/part2/babyKnow.html'),
+                babyKnowCss = require('../less/part2/babyKnow.less'),
+                merge = mergeHtmlAndCss(babyKnowCss, babyKnowPage);
+
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
+
+            var babyKnow = require('../js/part2/babyKnow.js');
+            babyKnow.onLoad();
+
+        }else if(id == 1){
+
+            /*var findPage =  require('../views/part2/find.html'),
+                findCss = require('../less/part2/find.less'),
+                merge = mergeHtmlAndCss(findCss, findPage);
+
+            $('#page-main-container').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').show();
+            $('#page-full').hide();*/
+
+            /*var find = require('../js/part2/find.js');
+             find.onLoad();*/
+        }
+
     },
 
     mineAction:function(){

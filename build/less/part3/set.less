@@ -11,5 +11,51 @@
       width: 3.8125rem;
       margin: 0 auto;
     }
+    p{
+      text-align: center;
+      font-size: .75rem;
+      color: #acaeaf;
+      padding-top: .625rem;
+    }
   }
+  .set-lists{
+    background-color: #FFF;
+    margin-top: 1.25rem;
+    ul{
+      margin-left: 1.9375rem;
+    }
+    li{
+      height: 2.6875rem;
+      line-height: 2.6875rem;
+      color: #414141;
+      font-size: .9375rem;
+      padding-left: .25rem;
+      padding-right: 1.25rem;
+      position: relative;
+      &:after{
+        .setBottomLine(@c: #e5e5e5);
+      }
+      &:last-child{
+        &:after{
+          border-bottom: 0;
+        }
+      }
+    }
+    .lists-box{
+      background-image: url("@{IMAGE-PATH}mine_icon_right.png@{RANDOM}");
+      background-repeat: no-repeat;
+      background-size: .4375rem auto;
+      background-position: right center;
+    }
+  }
+}
+
+.login-btn{
+  background-color: #fff;
+  color: #24d7cc;
+  height: 2.6875rem;
+  line-height: 2.6875rem;
+  text-align: center;
+  font-size: .9375rem;
+  margin: .8125rem 0;
 }

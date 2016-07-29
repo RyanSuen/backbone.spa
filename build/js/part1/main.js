@@ -27,7 +27,7 @@ var main = (function() {
     };
 
     fn.loadTpl = function($tpl,$target,data){ //三个参数的顺序分别是script的id,div的id,数据
-        var template = $tpl.html();   console.log(template,123);
+        var template = $tpl.html();
         Mustache.parse(template);
         var rendered = Mustache.render(template, data);
         $target.html(rendered);

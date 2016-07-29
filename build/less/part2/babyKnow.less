@@ -1,0 +1,105 @@
+@import "../common/reset";
+@import "../common/public";
+@import "../common/css3function";
+@import "../common/swiper";
+@import "../common/setOnepx";
+
+.swiper-container {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #24d7cc;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: .875rem;
+  background: #24d7cc;
+  width: 5rem;
+  color: #cff4f1;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  span{
+    display: block;
+    width: 3.5rem;
+    margin: 0 auto;
+    padding-bottom: .375rem;
+  }
+  &.active{
+    span{
+      border-bottom: .1875rem solid #ffffd5;
+      color: #fff;
+    }
+  }
+}
+
+.babyKnow-lists{
+  ul{
+
+  }
+  li{
+    height: 6.5625rem;
+    padding-right: .8125rem;
+    position: relative;
+    &:after{
+      .setBottomLine(@c: #e5e5e5);
+    }
+  }
+  .lists-content{
+    padding-top: 1rem;
+  }
+  .left{
+    width: 3.75rem;
+    margin: 0 .6875rem;
+  }
+  h4{
+    color: #404040;
+    font-size: .9375rem;
+    font-weight: 500;
+    height: 1.4375rem;
+    line-height: 1.4375rem;
+  }
+  p{
+    color: #808080;
+    font-size: .8125rem;
+    height: 2.5rem;
+    line-height: 1.1875rem;
+  }
+  .list-like{
+    width: 4.3125rem;
+    height: 1rem;
+    line-height: 1rem;
+    position: absolute;
+    bottom: .625rem;
+    right: 1rem;
+    text-align: right;
+    color: #c2c2c2;
+    i{
+      display: inline-block;
+      width: .9375rem;
+      height: .75rem;
+      vertical-align: middle;
+      background-image: url("@{IMAGE-PATH}babyknow_icon_notlike.png@{RANDOM}");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: .9375rem auto;
+    }
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: .75rem;
+    }
+  }
+}
+
+
