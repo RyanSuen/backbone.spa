@@ -19,7 +19,8 @@ var babyKnow = (function() {
 
     fn.events = function(){
         this.eventTabNavClick();
-        this.eventLikeClick();
+        this.eventGoBackClick();
+        //this.eventLikeClick();
     };
 
     /*导航轮播*/
@@ -62,7 +63,13 @@ var babyKnow = (function() {
         })
     };
 
-    fn.eventLikeClick = function () {
+    fn.eventGoBackClick = function(){
+        $('#back').on('click',function(){
+            history.back();
+        })
+    };
+
+    /*fn.eventLikeClick = function () {
         $('.list-like').on('click',function likeClickHandle(){
             var $this = $(this);
             if($this.hasClass('active')){
@@ -73,7 +80,7 @@ var babyKnow = (function() {
                 //todo  ajax请求
             }
         })
-    };
+    };*/
 
     fn.renderPage = function () {
         this.loadTpl($('#babyKnow-tpl'),$('#babyKnow'),this.data)
