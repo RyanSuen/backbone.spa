@@ -42,7 +42,27 @@
     }
   }
   .video-action{
-
+    width: 50%;
+    .left{
+      height: 1.25rem;
+      i{
+        display: inline-block;
+        width: 1.0625rem;
+        height: 1.0625rem;
+        vertical-align: middle;
+      }
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    .video-look{
+      width:8.0625rem;
+      position: relative;
+      &:after{
+        .setRightLine(@c: #d9d9d9);
+      }
+    }
   }
 }
 
