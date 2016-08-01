@@ -22,6 +22,7 @@ module.exports = Backbone.Router.extend({    //创建路由
         "login/:name/:phone": "setPasswordAction",
         "findPassword": "findPasswordAction",
         "set": "setAction",
+        "suggestion":"suggestionAction",
         "error": "fourOfOurAction"
     },
 
@@ -109,13 +110,13 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         }else if(id == 1){
 
-            /*var findPage =  require('../views/part2/find.html'),
-                findCss = require('../less/part2/find.less'),
-                merge = mergeHtmlAndCss(findCss, findPage);
+            var coursePage =  require('../views/part2/course.html'),
+                courseCss = require('../less/part2/course.less'),
+                merge = mergeHtmlAndCss(courseCss, coursePage);
 
-            $('#page-main-container').html( merge ).addClass('animated fadeIn').show();
-            $('#page-menu').show();
-            $('#page-full').hide();*/
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
 
             /*var find = require('../js/part2/find.js');
              find.onLoad();*/
@@ -136,7 +137,13 @@ module.exports = Backbone.Router.extend({    //创建路由
            /* var babyKnow = require('../js/part2/babyKnow.js');
             babyKnow.onLoad();*/
         }else if (id == 1){
+            var courseDetailPage =  require('../views/part2/courseDetail.html'),
+                courseDetailCss = require('../less/part2/courseDetail.less'),
+                merge = mergeHtmlAndCss(courseDetailCss, courseDetailPage);
 
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
         }
     },
 
@@ -196,6 +203,19 @@ module.exports = Backbone.Router.extend({    //创建路由
         var setPage =  require('../views/part3/set.html'),
             setCss = require('../less/part3/set.less'),
             merge = mergeHtmlAndCss(setCss, setPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        /*var setPassword = require('../js/part3/setPassword.js');
+         setPassword.onLoad();*/
+    },
+
+    suggestionAction: function(){
+        var suggestionPage =  require('../views/part3/suggestion.html'),
+            suggestionCss = require('../less/part3/suggestion.less'),
+            merge = mergeHtmlAndCss(suggestionCss, suggestionPage);
 
         $('#page-full').html( merge ).addClass('animated fadeIn').show();
         $('#page-main-container').hide();
