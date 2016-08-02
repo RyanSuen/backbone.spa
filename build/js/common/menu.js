@@ -16,14 +16,16 @@ var menu = (function () {
     };
 
     fn.addAnimateCss = function () {
+
         $('head').eq(0).append('<style>' + animateCss + menuCss + '</style>');
+
     };
 
     fn.handleClick = function(){
+
         $('.index-nav li').on('click', function () {
             var $this = $(this);
             $this.addClass('active').siblings('li').removeClass('active');
-            console.log($this.index());
             if($this.index()==0){
                 location.href = config.PAGE_URL.MAIN_PATH;
             }else if($this.index()==1){
@@ -32,6 +34,7 @@ var menu = (function () {
                 location.href = config.PAGE_URL.MINE_PATH;
             }
         })
+
     };
 
     return new Menu();

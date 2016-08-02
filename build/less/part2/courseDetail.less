@@ -42,9 +42,11 @@
     }
   }
   .video-action{
-    width: 50%;
+    padding: .625rem 0;
     .left{
       height: 1.25rem;
+      width: 50%;
+      position: relative;
       i{
         display: inline-block;
         width: 1.0625rem;
@@ -52,15 +54,74 @@
         vertical-align: middle;
       }
       span{
+        font-size: .875rem;
         display: inline-block;
         vertical-align: middle;
+        color: #808080;
+      }
+      &:after{
+        .setRightLine(@c: #d9d9d9);
+      }
+      &:last-child{
+        border-right: 0;
       }
     }
     .video-look{
       width:8.0625rem;
+      margin:0 auto;
+    }
+    .video-share{
+      width: 3.75rem;
+      margin: 0 auto;
+    }
+  }
+}
+.course-about{
+  background-color: #fff;
+  margin-top: .75rem;
+  color: #404040;
+  .about-title{
+    padding:.6875rem 0;
+    h4{
+      height: 1.0625rem;
+      line-height: 1.0625rem;
+      border-left: .1875rem solid #24d7cc;
+      padding-left: .625rem;
+      font-size: .9375rem;
+      font-weight: 500;
+    }
+  }
+  .about-lists{
+    padding-bottom: 1rem;
+    li{
+      padding: .5rem;
       position: relative;
-      &:after{
-        .setRightLine(@c: #d9d9d9);
+      .left{
+        width: 5.125rem;
+        margin-right: .5rem;
+      }
+      h4{
+        font-weight: 500;
+        font-size: .9375rem;
+        margin-top: .25rem;
+        line-height: 1.375rem;
+      }
+      .list-looked{
+        i{
+          display: inline-block;
+          width: .9375rem;
+          height: .9375rem;
+          vertical-align: middle;
+        }
+        span{
+          display: inline-block;
+          vertical-align: middle;
+          color: #a3a3a3;
+          font-size: .8125rem;
+        }
+      }
+      &:before{
+        .setTopLine(@c: #e5e5e5);
       }
     }
   }

@@ -21,9 +21,11 @@ module.exports = Backbone.Router.extend({    //创建路由
         "login": "loginAction",
         "login/:name/:phone": "setPasswordAction",
         "findPassword": "findPasswordAction",
+        "collect": "collectAction",
         "set": "setAction",
-        "suggestion":"suggestionAction",
-        "error": "fourOfOurAction"
+        "suggestion": "suggestionAction",
+        "provision": "provisionAction",
+        "error": "fourOFourAction"
     },
 
     indexAction: function() {
@@ -199,6 +201,19 @@ module.exports = Backbone.Router.extend({    //创建路由
          setPassword.onLoad();*/
     },
 
+    collectAction:function(){
+        var collectPage =  require('../views/part3/collect.html'),
+            collectCss = require('../less/part3/collect.less'),
+            merge = mergeHtmlAndCss(collectCss, collectPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        var collect = require('../js/part3/collect.js');
+        collect.onLoad();
+    },
+
     setAction: function () {
         var setPage =  require('../views/part3/set.html'),
             setCss = require('../less/part3/set.less'),
@@ -213,6 +228,7 @@ module.exports = Backbone.Router.extend({    //创建路由
     },
 
     suggestionAction: function(){
+
         var suggestionPage =  require('../views/part3/suggestion.html'),
             suggestionCss = require('../less/part3/suggestion.less'),
             merge = mergeHtmlAndCss(suggestionCss, suggestionPage);
@@ -223,10 +239,29 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         /*var setPassword = require('../js/part3/setPassword.js');
          setPassword.onLoad();*/
+
     },
 
-    fourOfOurAction: function() {    console.log( 'error' );
-        //404 page
+    provisionAction: function(){
+
+        var provisionPage =  require('../views/part3/provision.html'),
+            provisionCss = require('../less/part3/provision.less'),
+            merge = mergeHtmlAndCss(provisionCss, provisionPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+    },
+
+    fourOFourAction: function() {
+        var fourOFourPage =  require('../views/error/404.html'),
+            fourOFourCss = require('../less/error/404.less'),
+            merge = mergeHtmlAndCss(fourOFourCss, fourOFourPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
     }
 
 });
