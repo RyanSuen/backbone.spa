@@ -25,6 +25,7 @@ module.exports = Backbone.Router.extend({    //创建路由
         "set": "setAction",
         "suggestion": "suggestionAction",
         "provision": "provisionAction",
+        "aboutUs": "aboutUsAction",
         "error": "fourOFourAction"
     },
 
@@ -120,8 +121,8 @@ module.exports = Backbone.Router.extend({    //创建路由
             $('#page-menu').hide();
             $('#page-main-container').hide();
 
-            /*var find = require('../js/part2/find.js');
-             find.onLoad();*/
+            var course = require('../js/part2/course.js');
+            course.onLoad();
         }
 
     },
@@ -223,8 +224,8 @@ module.exports = Backbone.Router.extend({    //创建路由
         $('#page-main-container').hide();
         $('#page-menu').hide();
 
-        /*var setPassword = require('../js/part3/setPassword.js');
-         setPassword.onLoad();*/
+        var set = require('../js/part3/set.js');
+         set.onLoad();
     },
 
     suggestionAction: function(){
@@ -237,8 +238,8 @@ module.exports = Backbone.Router.extend({    //创建路由
         $('#page-main-container').hide();
         $('#page-menu').hide();
 
-        /*var setPassword = require('../js/part3/setPassword.js');
-         setPassword.onLoad();*/
+        var suggestion = require('../js/part3/suggestion.js');
+         suggestion.onLoad();
 
     },
 
@@ -252,6 +253,22 @@ module.exports = Backbone.Router.extend({    //创建路由
         $('#page-main-container').hide();
         $('#page-menu').hide();
 
+        var provision = require('../js/part3/provision.js');
+        provision.onLoad();
+
+    },
+
+    aboutUsAction: function () {
+        var provisionPage =  require('../views/part3/aboutUs.html'),
+            provisionCss = require('../less/part3/provision.less'),
+            merge = mergeHtmlAndCss(provisionCss, provisionPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        var provision = require('../js/part3/provision.js');
+        provision.onLoad();
     },
 
     fourOFourAction: function() {

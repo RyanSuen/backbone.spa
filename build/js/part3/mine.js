@@ -48,9 +48,11 @@ var mine = (function() {
 
         $('.mine-other ul li').on('click',function goToSetClickHandle(){
             var $this = $(this);
+            console.log($this.data('id'));
             switch ( $this.data('id') ){
                 case 1:
                     //TODO
+                    break;
                 case 2:
                     location.href = config.PAGE_URL.SUGGESTION_PATH;
                     break;

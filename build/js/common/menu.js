@@ -23,6 +23,14 @@ var menu = (function () {
 
     fn.handleClick = function(){
 
+        if(location.hash == '#main'){
+            $('.main').addClass('active').siblings('li').removeClass('active');
+        }else if(location.hash == '#find'){
+            $('.find').addClass('active').siblings('li').removeClass('active');
+        }else if(location.hash == '#mine'){
+            $('.mine').addClass('active').siblings('li').removeClass('active');
+        }
+
         $('.index-nav li').on('click', function () {
             var $this = $(this);
             $this.addClass('active').siblings('li').removeClass('active');

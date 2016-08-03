@@ -4,6 +4,54 @@
 @import "../common/setOnepx";
 
 .main{
+  .main-title{
+    background-color: #24d7cc;
+    width: 100%;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .left{
+      margin-left: 1.1875rem;
+    }
+    .right{
+      margin-right: 1.1875rem;
+      width: 1.3125rem;
+      height: 1.1875rem;
+    }
+    .date{
+      width: 6.8125rem;
+      height: 1.1875rem;
+      line-height: 1.1875rem;
+      margin: .78125rem auto;
+      i{
+        display: inline-block;
+        width: .5rem;
+        height: .8125rem;
+        background-position: center center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+        &.pre{
+          background-image: url("@{IMAGE-PATH}main_icon_pre.png");
+        }
+        &.next{
+          background-image: url("@{IMAGE-PATH}main_icon_next.png");
+        }
+      }
+      span{
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        margin: 0 .25rem;
+        font-size:1.0625rem;
+        color: #FFFFFF;
+      }
+    }
+  }
   .info{
     background-color: #24d7cc;
     background-image: url('@{IMAGE-PATH}main_bg.png');
@@ -11,47 +59,7 @@
     background-repeat: no-repeat;
     background-size: 100% auto;
     color: #FFFFFF;
-    .main-title{
-      padding:.75rem 0;
-      .left{
-        margin-left: 1.1875rem;
-      }
-      .right{
-        margin-right: 1.1875rem;
-        width: 1.3125rem;
-        height: 1.1875rem;
-      }
-      .date{
-        width: 6.8125rem;
-        height: 1.1875rem;
-        line-height: 1.1875rem;
-        margin: 0 auto;
-        i{
-          display: inline-block;
-          width: .5rem;
-          height: .8125rem;
-          background-position: center center;
-          background-size: 100% auto;
-          background-repeat: no-repeat;
-          vertical-align: middle;
-          &.pre{
-            background-image: url("@{IMAGE-PATH}main_icon_pre.png");
-          }
-          &.next{
-            background-image: url("@{IMAGE-PATH}main_icon_next.png");
-          }
-        }
-        span{
-          display: inline-block;
-          text-align: center;
-          vertical-align: middle;
-          margin: 0 .25rem;
-          font-size:1.0625rem;
-          color: #FFFFFF;
-        }
-      }
-    }
-    
+    padding-top: 2.75rem;
     .base-info{
       margin: .625rem .8125rem;
       .avatar{
@@ -171,8 +179,11 @@
       line-height: 2.625rem;
       font-size: .9375rem;
       color: #656565;
+      .left{
+        padding-left: .375rem;
+      }
       .right{
-        padding-right: .5rem;
+        padding-right: .875rem;
         font-size: .75rem;
       }
     }
@@ -181,7 +192,7 @@
         width: 100%;
       }
       .list-title{
-        padding:.5rem 0;
+        padding:.75rem 0 .25rem 0;
         position: relative;
         &:before{
           .setTopLine(@c:#e5e5e5);
@@ -210,6 +221,7 @@
           font-size: .9375rem;
           line-height: 1.4375rem;
           height: 1.4375rem;
+          overflow: hidden;
         }
         p{
           color: #808080;

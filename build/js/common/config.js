@@ -15,10 +15,12 @@ module.exports = {
         MINE_PATH:commonPagePath + '#mine',
         COLLECT_PATH: commonPagePath + '#collect',
         SUGGESTION_PATH: commonPagePath + '#suggestion',
-        SET_PATH: commonPagePath + '#set'
+        SET_PATH: commonPagePath + '#set',
+        PROVISION_PATH: commonPagePath + '#provision',
+        ABOUT_US_PATH: commonPagePath + '#aboutUs'
     },
     API_URL: {
-
+        MAINJSON_PATH: commonPagePath + '/data/main.json'
     },
     DATE: '?date=2016072101'// +Math.random().toString().replace('.', '')
 };
