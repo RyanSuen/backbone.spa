@@ -12,6 +12,12 @@ var gender = (function() {
         this.handleClick();
     };
 
+    fn.events = function(){
+
+    };
+
+    /*点击完成保存baby_id到cookie*/
+
     fn.data = {
 
     };

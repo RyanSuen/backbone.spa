@@ -5,14 +5,25 @@
             妈妈喂养
         </h4>
     </header>
-
+    <div id="details"></div>
+    <script id="details-tpl" type="x-tmpl-mustache">
+        <section class="baby-content">
+            <h4>{{title}}</h4>
+            <div class="readed">
+                <span>阅读:<i>{{reads}}</i></span>
+            </div>
+            <div class="content">
+            {{{desc}}}
+            </div>
+        </section>
+    </script>
     <div class="fix-box">
         <ul class="li-left clear">
             <li>
-                <div class="inner-box keep-box active">
+                <div class="inner-box keep-box">
                     <div class="inner-box-wrapper">
                         <i></i>
-                        <span>已收藏</span>
+                        <span>收藏</span>
                     </div>
                 </div>
             </li>
@@ -26,4 +37,13 @@
             </li>
         </ul>
     </div>
+    <div id="loading"></div>
+    <script id="loading-tpl" type="x-tmpl-mustache">
+        <div class="loading" id="ajax-loading">
+            <div class="loading-wrapper">
+                <img src="{{IMG_PATH}}loading.gif{{DATE}}" />
+                <p>加载中......</p>
+            </div>
+        </div>
+    </script>
 </div>
