@@ -37,9 +37,28 @@ var main = (function() {
     };
 
     fn.events = function () {
+        this.eventUploadImgClick();
         this.eventGoToRecordClick();
         this.eventGoToListClick();
         this.eventGoToDetail();
+    };
+
+    /*点击上传图片*/
+    fn.eventUploadImgClick = function () {
+        console.log('123');
+        $("#photo").change(function(e){
+            var file = e.target.files||e.dataTransfer.files;
+            console.log(file);
+            if(file){
+                var reader = new FileReader();
+                reader.onload=function(){
+                    //$("<img src='"+this.result+"'/>").appendTo("body");
+                    $('#avatar').attr('src',this.result);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
     };
 
     /*跳转到体重身高记录页*/

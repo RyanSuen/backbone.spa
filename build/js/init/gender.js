@@ -25,9 +25,9 @@ var gender = (function() {
 
     /*获取链接上的参数*/
     fn.getQueryFromUrl = function(key){
-        var search = location.search,
+        var search = location.hash,
             obj = {};
-        search = decodeURIComponent( search.substring(1) );
+        search = search.split('?')[1];
         var arr = search.split('&'),
             len = arr.length,
             i;
@@ -47,14 +47,12 @@ var gender = (function() {
             var data = {
                 sex:1
             };
-            /*console.log(that.getQueryFromUrl('birth'));
-            console.log(location.search);*/
             data.birth = that.getQueryFromUrl('birth');
             data.sex = that.data.gender;
             console.log(data);
             $.ajax({
                 type: 'POST',
-                url: config.API_URL.BABYDETAIL_PATH,
+                url: config.API_URL.BABYREGISTER_PATH,
                 data:data,
                 dataType: 'json',
                 success: function(data){

@@ -24,9 +24,9 @@ var babyDetail = (function() {
 
     /*获取链接上的参数*/
     fn.getQueryFromUrl = function(key){
-        var search = location.search,
+        var search = location.hash,
             obj = {};
-        search = decodeURIComponent( search.substring(1) );
+        search = search.split('?')[1];
         var arr = search.split('&'),
             len = arr.length,
             i;
