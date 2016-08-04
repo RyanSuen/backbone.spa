@@ -16,12 +16,17 @@ module.exports = Backbone.Router.extend({    //创建路由
         "record": "recordAction",
         "find": "findAction",
         "find/:lists": "listsAction",
+        "find/:lists/:details": "detailsAction",
         "mine": "mineAction",
         "login": "loginAction",
         "login/:name/:phone": "setPasswordAction",
         "findPassword": "findPasswordAction",
+        "collect": "collectAction",
         "set": "setAction",
-        "error": "fourOfOurAction"
+        "suggestion": "suggestionAction",
+        "provision": "provisionAction",
+        "aboutUs": "aboutUsAction",
+        "error": "fourOFourAction"
     },
 
     indexAction: function() {
@@ -108,18 +113,41 @@ module.exports = Backbone.Router.extend({    //创建路由
 
         }else if(id == 1){
 
-            /*var findPage =  require('../views/part2/find.html'),
-                findCss = require('../less/part2/find.less'),
-                merge = mergeHtmlAndCss(findCss, findPage);
+            var coursePage =  require('../views/part2/course.html'),
+                courseCss = require('../less/part2/course.less'),
+                merge = mergeHtmlAndCss(courseCss, coursePage);
 
-            $('#page-main-container').html( merge ).addClass('animated fadeIn').show();
-            $('#page-menu').show();
-            $('#page-full').hide();*/
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
 
-            /*var find = require('../js/part2/find.js');
-             find.onLoad();*/
+            var course = require('../js/part2/course.js');
+            course.onLoad();
         }
 
+    },
+
+    detailsAction: function (id,detailId) {
+        if(id == 0){
+            var babyDetailPage =  require('../views/part2/babyDetail.html'),
+                babyDetailCss = require('../less/part2/babyDetail.less'),
+                merge = mergeHtmlAndCss(babyDetailCss, babyDetailPage);
+
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
+
+           /* var babyKnow = require('../js/part2/babyKnow.js');
+            babyKnow.onLoad();*/
+        }else if (id == 1){
+            var courseDetailPage =  require('../views/part2/courseDetail.html'),
+                courseDetailCss = require('../less/part2/courseDetail.less'),
+                merge = mergeHtmlAndCss(courseDetailCss, courseDetailPage);
+
+            $('#page-full').html( merge ).addClass('animated fadeIn').show();
+            $('#page-menu').hide();
+            $('#page-main-container').hide();
+        }
     },
 
     mineAction:function(){
@@ -174,6 +202,19 @@ module.exports = Backbone.Router.extend({    //创建路由
          setPassword.onLoad();*/
     },
 
+    collectAction:function(){
+        var collectPage =  require('../views/part3/collect.html'),
+            collectCss = require('../less/part3/collect.less'),
+            merge = mergeHtmlAndCss(collectCss, collectPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        var collect = require('../js/part3/collect.js');
+        collect.onLoad();
+    },
+
     setAction: function () {
         var setPage =  require('../views/part3/set.html'),
             setCss = require('../less/part3/set.less'),
@@ -183,12 +224,61 @@ module.exports = Backbone.Router.extend({    //创建路由
         $('#page-main-container').hide();
         $('#page-menu').hide();
 
-        /*var setPassword = require('../js/part3/setPassword.js');
-         setPassword.onLoad();*/
+        var set = require('../js/part3/set.js');
+         set.onLoad();
     },
 
-    fourOfOurAction: function() {    console.log( 'error' );
-        //404 page
+    suggestionAction: function(){
+
+        var suggestionPage =  require('../views/part3/suggestion.html'),
+            suggestionCss = require('../less/part3/suggestion.less'),
+            merge = mergeHtmlAndCss(suggestionCss, suggestionPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        var suggestion = require('../js/part3/suggestion.js');
+         suggestion.onLoad();
+
+    },
+
+    provisionAction: function(){
+
+        var provisionPage =  require('../views/part3/provision.html'),
+            provisionCss = require('../less/part3/provision.less'),
+            merge = mergeHtmlAndCss(provisionCss, provisionPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        var provision = require('../js/part3/provision.js');
+        provision.onLoad();
+
+    },
+
+    aboutUsAction: function () {
+        var provisionPage =  require('../views/part3/aboutUs.html'),
+            provisionCss = require('../less/part3/provision.less'),
+            merge = mergeHtmlAndCss(provisionCss, provisionPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
+
+        var provision = require('../js/part3/provision.js');
+        provision.onLoad();
+    },
+
+    fourOFourAction: function() {
+        var fourOFourPage =  require('../views/error/404.html'),
+            fourOFourCss = require('../less/error/404.less'),
+            merge = mergeHtmlAndCss(fourOFourCss, fourOFourPage);
+
+        $('#page-full').html( merge ).addClass('animated fadeIn').show();
+        $('#page-main-container').hide();
+        $('#page-menu').hide();
     }
 
 });

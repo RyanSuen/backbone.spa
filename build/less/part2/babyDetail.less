@@ -1,0 +1,72 @@
+@import "../common/reset";
+@import "../common/public";
+@import "../common/css3function";
+@import "../common/setOnepx";
+
+.details{
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+}
+.fix-box{
+  position: fixed;
+  width: 100%;
+  height: 2.6875rem;
+  bottom: 0;
+  left: 0;
+  background-color: #f5f8fa;
+  ul{
+
+  }
+  li{
+    width: 50%;
+    .inner-box{
+      height: 1.125rem;
+      line-height: 1.125rem;
+      margin: .78125rem 0;
+      .inner-box-wrapper{
+        width:5.9375rem;
+        margin: 0 auto;
+      }
+      &.keep-box{
+        position: relative;
+        &:after{
+          .setRightLine(@c: #b9c4cb);
+        }
+        i{
+          background-image: url("@{IMAGE-PATH}icon_keep.png@{RANDOM}");
+        }
+        &.active{
+          i{
+            background-image: url("@{IMAGE-PATH}icon_keeped.png@{RANDOM}");
+          }
+          span{
+            color: #ffbf11;
+          }
+        }
+      }
+      &.share-box{
+        i{
+          background-image: url("@{IMAGE-PATH}icon_share.png@{RANDOM}");
+        }
+      }
+    }
+    i{
+      display: inline-block;
+      vertical-align: middle;
+      width: 1.125rem;
+      height: 1.125rem;
+      background-size: 1.125rem auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: .875rem;
+      color: #7b7d7e;
+    }
+  }
+}
+
+

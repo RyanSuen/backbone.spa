@@ -1,20 +1,20 @@
 <div id="main"></div>
 <script id="main-tpl" type="x-tmpl-mustache">
 <div class="main">
+    <header class="main-title clear">
+        <!--<div class="left">
+            <span>今天</span>
+        </div>-->
+        <!--<div class="right">
+            <img src="{{IMG_PATH}}main_icon_msg.png{{DATE}}" />
+        </div>-->
+        <div class="date">
+            <i class="pre"></i>
+            <span>12月12日</span>
+            <i class="next"></i>
+        </div>
+    </header>
     <section class="info">
-        <header class="main-title clear">
-            <div class="left">
-                <span>今天</span>
-            </div>
-            <div class="right">
-                <img src="{{IMG_PATH}}main_icon_msg.png{{DATE}}" />
-            </div>
-            <div class="date">
-                <i class="pre"></i>
-                <span>12月12日</span>
-                <i class="next"></i>
-            </div>
-        </header>
         <div class="how-old">
             <p>一个月6天</p>
         </div>
@@ -24,6 +24,9 @@
                 <i>
                     <img src="{{IMG_PATH}}main_icon_photo.png{{DATE}}" />
                 </i>
+                <div class="get-photo">
+                    <input type="file" name="photo" />
+                </div>
             </div>
             <div class="auto">
                 <div class="info-data">
@@ -73,31 +76,33 @@
             <div class="left">
                 宝宝知道
             </div>
-            <div class="right">
+            <div class="right" id="more">
                 更多
             </div>
         </header>
         <ul>
+            {{#contentLists}}
             <li>
                 <div class="list-title clear">
                     <div class="left">
-                        <img src="{{IMG_PATH}}main_title_01.png{{DATE}}" />
+                        <img src="{{caticon}}" />
                     </div>
                     <div class="auto">
-                        <h4>妈妈喂养</h4>
+                        <h4>{{catname}}</h4>
                     </div>
                 </div>
                 <div class="list-content clear">
                     <div class="left">
-                        <img src="{{IMG_PATH}}main_content_01.png{{DATE}}" />
+                        <img src="{{content.pic}}" />
                     </div>
                     <div class="auto">
-                        <h5>新生儿每日营养成分及喂养次数</h5>
-                        <p>有的孩子不好好吃饭，吃饭时胡乱扒拉几口就去玩。</p>
+                        <h5>{{content.title}}</h5>
+                        <p>{{content.desc}}</p>
                     </div>
                 </div>
             </li>
-            <li>
+            {{/contentLists}}
+            <!--<li>
                 <div class="list-title clear">
                     <div class="left">
                         <img src="{{IMG_PATH}}main_title_02.png{{DATE}}" />
@@ -154,6 +159,25 @@
                     </div>
                 </div>
             </li>
+            <li>
+                <div class="list-title clear">
+                    <div class="left">
+                        <img src="{{IMG_PATH}}main_title_04.png{{DATE}}" />
+                    </div>
+                    <div class="auto">
+                        <h4>常见疾病</h4>
+                    </div>
+                </div>
+                <div class="list-content clear">
+                    <div class="left">
+                        <img src="{{IMG_PATH}}main_content_04.png{{DATE}}" />
+                    </div>
+                    <div class="auto">
+                        <h5>春夏交替幼儿注意事项</h5>
+                        <p>春夏交替时期，天气忽冷忽热，气温不稳定，有时上午阳光明媚，下......</p>
+                    </div>
+                </div>
+            </li>-->
         </ul>
     </section>
 </div>

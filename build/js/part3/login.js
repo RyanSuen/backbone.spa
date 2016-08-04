@@ -14,7 +14,10 @@ var login = (function() {
 
     fn.data = {
         IMG_PATH: config.IMG_PATH,
-        DATE:config.DATE
+        DATE:config.DATE,
+        listsContent:[
+
+        ]
     };
 
     /*事件点击处理*/
@@ -46,6 +49,20 @@ var login = (function() {
             }
 
         })
+    };
+
+    /*点击登陆*/
+    fn.eventLoginClick = function(){
+
+        $('.login-btn').on('click',function loginClickHandle(){
+
+        })
+
+    };
+
+    /*手机验证*/
+    fn.isCellPhone = function(){
+        return /^1[0-9]{10}$/.test(s);
     };
 
     /*模板渲染*/

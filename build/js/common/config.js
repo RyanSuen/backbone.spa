@@ -5,17 +5,22 @@
 var commonPagePath = '/backbone.spa/';
 
 module.exports = {
-    IMG_PATH: commonPagePath+'images/',
+    IMG_PATH: commonPagePath + 'images/',
     PAGE_URL: {
-        INIT_PATH: commonPagePath +'#init',
-        INIT_GENDER_PATH: commonPagePath+'#init/gender',
+        INIT_PATH: commonPagePath + '#init',
+        INIT_GENDER_PATH: commonPagePath + '#init/gender',
         MAIN_PATH: commonPagePath + '#main',
         MAIN_RECORD_PATH: commonPagePath + '#record',
-        FIND_PATH: commonPagePath+'#find',
-        MINE_PATH:commonPagePath+'#mine'
+        FIND_PATH: commonPagePath + '#find',
+        MINE_PATH:commonPagePath + '#mine',
+        COLLECT_PATH: commonPagePath + '#collect',
+        SUGGESTION_PATH: commonPagePath + '#suggestion',
+        SET_PATH: commonPagePath + '#set',
+        PROVISION_PATH: commonPagePath + '#provision',
+        ABOUT_US_PATH: commonPagePath + '#aboutUs'
     },
     API_URL: {
-
+        MAINJSON_PATH: commonPagePath + '/data/main.json'
     },
     DATE: '?date=2016072101'// +Math.random().toString().replace('.', '')
 };

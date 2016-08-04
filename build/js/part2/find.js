@@ -8,11 +8,23 @@ var find = (function() {
 
     fn.onLoad = function () {
         this.renderPage();
+        this.eventGoToClick();
     };
 
     fn.data = {
         IMG_PATH: config.IMG_PATH,
         DATE:config.DATE
+    };
+
+    fn.eventGoToClick = function(){
+        $('.find-lists ul li').on('click',function goToClickHandle(){
+            var $this = $(this);
+            if($this.data('id') == 0){
+                location.href = config.PAGE_URL.FIND_PATH + '/0';
+            }else if($this.data('id') == 1){
+                location.href = config.PAGE_URL.FIND_PATH + '/1';
+            }
+        })
     };
 
     fn.renderPage = function () {

@@ -1,0 +1,42 @@
+@import "../common/reset";
+@import "../common/public";
+@import "../common/css3function";
+
+.error{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: fixed;
+}
+
+.error-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7.375rem;
+  height: auto;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform:translate3d(-50%, -50%, 0);
+  -o-transform:translate3d(-50%, -50%, 0) ;
+  p{
+    text-align: center;
+    font-size: .875rem;
+    color: #808080;
+    padding: .5rem 0;
+    &.upgrade{
+      color:#59e4db;
+      font-size: 1.125rem;
+    }
+  }
+  .reload-btn{
+    width:100%;
+    height: 2rem;
+    line-height: 2rem;
+    border: .0625rem solid #59e4db;
+    color: #59e4db;
+    font-size: .9375rem;
+    text-align: center;
+    .br(2rem);
+  }
+}
