@@ -21,6 +21,11 @@ var menu = (function () {
 
     };
 
+    fn.data = {
+        IMG_PATH: config.IMG_PATH,
+        DATE:config.DATE
+    };
+
     fn.handleClick = function(){
 
         if(location.hash == '#main'){

@@ -20,7 +20,9 @@ module.exports = {
         ABOUT_US_PATH: commonPagePath + '#aboutUs'
     },
     API_URL: {
-        MAINJSON_PATH: commonPagePath + '/data/main.json'
+        MAINJSON_PATH: commonPagePath + '/data/main.json', //首页列表数据接口
+        BABYDETAIL_PATH: commonPagePath + '/data/babyDetail.json', //文章详情页数据接口
+        BABYREGISTER_PATH: commonPagePath + '/data/reg.json'
     },
     DATE: '?date=2016072101'// +Math.random().toString().replace('.', '')
 };

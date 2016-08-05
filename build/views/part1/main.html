@@ -20,12 +20,12 @@
         </div>
         <div class="base-info clear">
             <div class="left avatar">
-                <img src="{{IMG_PATH}}main_avatar.png{{DATE}}" />
+                <img id="avatar" src="{{IMG_PATH}}main_avatar.png{{DATE}}" />
                 <i>
                     <img src="{{IMG_PATH}}main_icon_photo.png{{DATE}}" />
                 </i>
                 <div class="get-photo">
-                    <input type="file" name="photo" />
+                    <input type="file" name="photo" id="photp" />
                 </div>
             </div>
             <div class="auto">
@@ -91,7 +91,7 @@
                         <h4>{{catname}}</h4>
                     </div>
                 </div>
-                <div class="list-content clear">
+                <div class="list-content clear" data-id="{{content.id}}">
                     <div class="left">
                         <img src="{{content.pic}}" />
                     </div>
@@ -102,83 +102,8 @@
                 </div>
             </li>
             {{/contentLists}}
-            <!--<li>
-                <div class="list-title clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_title_02.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h4>护理保健</h4>
-                    </div>
-                </div>
-                <div class="list-content clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_content_02.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h5>穿内裤对宝宝其实是非常重要的</h5>
-                        <p>在宝宝长大一些告别纸尿裤的时候许多的家长觉得孩子还小......</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="list-title clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_title_03.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h4>宝宝生长发育</h4>
-                    </div>
-                </div>
-                <div class="list-content clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_content_03.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h5>1.5-2岁宝宝身体的发育标准</h5>
-                        <p>有的孩子不好好吃饭，吃饭时胡乱扒拉几口就去玩。</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="list-title clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_title_04.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h4>节气推荐</h4>
-                    </div>
-                </div>
-                <div class="list-content clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_content_04.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h5>春夏交替幼儿注意事项</h5>
-                        <p>春夏交替时期，天气忽冷忽热，气温不稳定，有时上午阳光明媚，下......</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="list-title clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_title_04.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h4>常见疾病</h4>
-                    </div>
-                </div>
-                <div class="list-content clear">
-                    <div class="left">
-                        <img src="{{IMG_PATH}}main_content_04.png{{DATE}}" />
-                    </div>
-                    <div class="auto">
-                        <h5>春夏交替幼儿注意事项</h5>
-                        <p>春夏交替时期，天气忽冷忽热，气温不稳定，有时上午阳光明媚，下......</p>
-                    </div>
-                </div>
-            </li>-->
         </ul>
     </section>
 </div>
 </script>
+

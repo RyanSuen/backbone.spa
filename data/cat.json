@@ -1,0 +1,26 @@
+[
+  {
+    "catname": "全部",
+    "catid": "1,4,5,6,7,8"
+  },
+  {
+    "catname": "妈妈喂养",
+    "catid": "4"
+  },
+  {
+    "catname": "生长发育",
+    "catid": "5"
+  },
+  {
+    "catname": "护理保健",
+    "catid": "6"
+  },
+  {
+    "catname": "常见疾病",
+    "catid": "7"
+  },
+  {
+    "catname": "节气推荐",
+    "catid": "8"
+  }
+]

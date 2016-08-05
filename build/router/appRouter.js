@@ -128,7 +128,7 @@ module.exports = Backbone.Router.extend({    //创建路由
     },
 
     detailsAction: function (id,detailId) {
-        if(id == 0){
+        if( id == 0 ){
             var babyDetailPage =  require('../views/part2/babyDetail.html'),
                 babyDetailCss = require('../less/part2/babyDetail.less'),
                 merge = mergeHtmlAndCss(babyDetailCss, babyDetailPage);
@@ -137,9 +137,11 @@ module.exports = Backbone.Router.extend({    //创建路由
             $('#page-menu').hide();
             $('#page-main-container').hide();
 
-           /* var babyKnow = require('../js/part2/babyKnow.js');
-            babyKnow.onLoad();*/
-        }else if (id == 1){
+            var babyDetail = require('../js/part2/babyDetail.js');
+            babyDetail.onLoad();
+
+        }else if ( id == 1 ){
+
             var courseDetailPage =  require('../views/part2/courseDetail.html'),
                 courseDetailCss = require('../less/part2/courseDetail.less'),
                 merge = mergeHtmlAndCss(courseDetailCss, courseDetailPage);
@@ -147,6 +149,7 @@ module.exports = Backbone.Router.extend({    //创建路由
             $('#page-full').html( merge ).addClass('animated fadeIn').show();
             $('#page-menu').hide();
             $('#page-main-container').hide();
+
         }
     },
 
